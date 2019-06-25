@@ -59,7 +59,7 @@ menus:
   -
     href: https://niaobulashi.com
     label: 个人博客
-    target: _self
+    target: _blank
 
   -
     href: /gitchat.html
@@ -115,12 +115,6 @@ navs:
         subLabel: Spring Cloud
 
   -
-    href: /spring-cloud.html
-    label: Spring Cloud
-    target: _self
-
-  -
-
     href: /java.html
     label: Java
     target: _self
