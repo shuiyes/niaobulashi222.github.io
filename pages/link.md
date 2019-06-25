@@ -9,6 +9,7 @@ permalink: /link
 
 ## 友情链接
 
+- [纯洁的微笑](http://www.ityouknow.com/) - 分享技术、感悟人生
 - [沉默王二](http://www.qingmiaokeji.cn/) - 一个有趣的程序员
 - [江南一点雨](https://www.javaboy.org/) - 专注于 Spring Boot + 微服务
 - [闷瓜蛋子的博客](https://fookwood.com) - 八年博客，大公司小公司游荡多年，目前为自由职业
