@@ -96,6 +96,11 @@ navs:
     label: Home
 
   -
+    href: /open-source
+    label: Open-Source
+    target: _self
+
+  -
     href: /spring-boot.html
     label: Spring Boot
     target: _self
@@ -142,32 +147,32 @@ labels:
   -
     href: /fastdfs.html
     label: FastDFS
-    target: _blank
+    target: _self
 
   -
     href: /mongodb.html
     label: MongoDB
-    target: _blank
+    target: _self
 
   -
     href: /docker.html
     label: Docker
-    target: _blank
+    target: _self
 
   -
     href: /open-source.html
     label: Code
-    target: _blank
+    target: _self
 
   -
     href: /it.html
     label: IT
-    target: _blank
+    target: _self
 
   -
     href: /python.html
     label: Python
-    target: _blank
+    target: _self
 
 
 # selected articles
