@@ -19,6 +19,7 @@ repository: niaobulashi/niaobulashi.github.io
 github_url: https://github.com/niaobulashi
 url: https://niaobulashi.github.io/
 enforce_ssl: niaobulashi.com
+personal_blog_url: https://niaobulashi.com/
 
 ## Gem
 plugins:
