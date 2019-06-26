@@ -221,7 +221,7 @@ gitment:
    oauth:
        client_id: 2bbd0153436b8c2f1c0b
        client_secret: 71e07a7e992584e013aa3e29d7e9f993b58bf295
- https://github.com/gitalk/gitalk#install
+ #https://github.com/gitalk/gitalk#install
 gitalk:
   owner: niaobulashi
   repo: niaobulashi.github.io
