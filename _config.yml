@@ -215,24 +215,24 @@ comments_provider: gitalk
 #disqus:
 #   username: niaobulashi
 # https://imsun.net/posts/gitment-introduction/
-#gitment:
-#   owner: niaobulashi
-#   repo: blog-comments
-#   oauth:
-#       client_id: 2bbd0153436b8c2f1c0b
-#       client_secret: 71e07a7e992584e013aa3e29d7e9f993b58bf295
-# https://github.com/gitalk/gitalk#install
+gitment:
+   owner: niaobulashi
+   repo: niaobulashi.github.io
+   oauth:
+       client_id: 2bbd0153436b8c2f1c0b
+       client_secret: 71e07a7e992584e013aa3e29d7e9f993b58bf295
+ https://github.com/gitalk/gitalk#install
 gitalk:
   owner: niaobulashi
   repo: niaobulashi.github.io
   clientID: 1a212e3a9a8213a6d5c2
   clientSecret: 90ff370b6828c99d88115aa3a81a4c6fe8618822
 # 在使用其它评论组件时可点击显示 Disqus
-lazy_load_disqus : false
+lazy_load_disqus : true
 
 
 # For about.html. Fell free to create your own!
 skill_software_keywords: [Java, MySQL, Oracle, PL/SQL, Design Patterns]
-skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
-skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, AngularJS, NodeJS, ExpressJS, MongoDB, Redis, Boostrap]
+skill_j2ee_keywords: [Spring, Spring Boot, Spring Cloud, Redis, Struct, Hibernet, MyBatis]
+skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, AngularJS, VueJS, LayUI, Boostrap]
 skill_mobile_app_keywords: [Flutter]
