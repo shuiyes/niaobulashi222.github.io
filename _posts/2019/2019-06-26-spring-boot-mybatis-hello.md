@@ -209,9 +209,8 @@ public class MabatisTest {
 ```
 
 
-
 ## 总结
 
 这是SpringBoot2集成Mybatis最普通常见的方式，也是最快搭建的方式。
 
-**[示例代码-github](https://github.com/ityouknow/spring-boot-examples/tree/master/spring-boot-mybatis)**
+**[示例代码-github](https://github.com/niaobulashi/spring-boot-mybatis/tree/master/mybatis_01_hello)**
