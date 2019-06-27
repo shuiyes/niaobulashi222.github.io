@@ -139,35 +139,35 @@ labels:
     label: mybatis
     target: _self
 
-  -
-    href: /payment.html
-    label: 支付
-    target: _self
-
-  -
-    href: /fastdfs.html
-    label: FastDFS
-    target: _self
-
-  -
-    href: /mongodb.html
-    label: MongoDB
-    target: _self
-
-  -
-    href: /docker.html
-    label: Docker
-    target: _self
-
-  -
-    href: /it.html
-    label: IT
-    target: _self
-
-  -
-    href: /python.html
-    label: Python
-    target: _self
+#  -
+#    href: /payment.html
+#    label: 支付
+#    target: _self
+#
+#  -
+#    href: /fastdfs.html
+#    label: FastDFS
+#    target: _self
+#
+#  -
+#    href: /mongodb.html
+#    label: MongoDB
+#    target: _self
+#
+#  -
+#    href: /docker.html
+#    label: Docker
+#    target: _self
+#
+#  -
+#    href: /it.html
+#    label: IT
+#    target: _self
+#
+#  -
+#    href: /python.html
+#    label: Python
+#    target: _self
 
 
 # selected articles
