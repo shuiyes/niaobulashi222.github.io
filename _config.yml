@@ -135,6 +135,11 @@ navs:
 labels:
 
   -
+    href: /mybatis.html
+    label: mybatis
+    target: _self
+
+  -
     href: /payment.html
     label: 支付
     target: _self
@@ -152,11 +157,6 @@ labels:
   -
     href: /docker.html
     label: Docker
-    target: _self
-
-  -
-    href: /open-source.html
-    label: Code
     target: _self
 
   -
