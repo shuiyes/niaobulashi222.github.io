@@ -116,8 +116,9 @@ public class MybatisApplication {
 
 或者直接在 Mapper 类上面添加注解`@Mapper`，建议使用上面那种，不然每个 mapper 加个注解也挺麻烦的
 
-
 ### 3、添加 User 的映射文件
+
+### 4、添加 User 的映射文件
 
 ``` xml
 <mapper namespace="com.niaobulashi.dao.SysUserDao">
@@ -139,7 +140,7 @@ public class MybatisApplication {
 其实就是把上个版本中 Mapper 的 Sql 搬到了这里的 xml 中了
 
 
-### 4、编写 Mapper 层的代码
+### 5、编写 Mapper 层的代码
 
 ``` java
 public interface SysUserDao {
@@ -184,7 +185,7 @@ public class SysUserServiceImpl  implements SysUserService {
 ```
 
 
-### 6、测试
+### 7、测试
 
 经过上面5个步骤就可以完成基本的接口开发，省去了Controller层的开发
 
@@ -208,9 +209,8 @@ public class MabatisTest {
 }
 ```
 
-
 ## 总结
 
-这是SpringBoot2集成Mybatis最普通常见的方式，也是最快搭建的方式。
+SpringBoot和Mybatis这对CP，完美
 
 **[示例代码-github](https://github.com/niaobulashi/spring-boot-mybatis/tree/master/mybatis_01_hello)**
