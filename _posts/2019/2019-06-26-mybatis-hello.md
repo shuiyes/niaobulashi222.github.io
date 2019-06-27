@@ -241,6 +241,10 @@ public class MabatisTest {
 }
 ```
 
+## 最后项目目录结构
+
+![mybaits_01_hello项目目录结构](<https://niaobulashi.github.io/assets/images/2019/springboot/mybatis_01_01.png>)
+
 ## 总结
 
 SpringBoot和Mybatis这对CP，完美
