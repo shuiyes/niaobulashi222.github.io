@@ -17,8 +17,6 @@ shiro学习地址：https://jinnianshilongnian.iteye.com/blog/2018398
 
 登录名和密码：niaobulashi/niaobulashi
 
-欢迎大家star，fork，一起探讨学习
-
 ## **项目说明**
 
  - 采用SpringBoot、MyBatis、Shiro框架，开发的一套权限系统，极低门槛，拿来即用。设计之初，就非常注重安全性，为企业系统保驾护航，让一切都变得如此简单。
@@ -115,11 +113,28 @@ niaobulashi
 
  
 
-ps：日报管理模块没有实际功能，知识个菜单而已，后期进行维护
+ps：日报管理模块没有实际功能，只是个菜单而已，后期进行维护
 
-欢迎一起讨论和学习
 
- 
+
+---
+关于作者：
+
+个人博客：[鸟不拉屎](https://niaobulashi.com)
+
+github主页：[niaobulashi](https://github.com/niaobulashi)
+
+github博客：[鸟不拉屎](https://niaobulashi.github.io)
+
+掘金：[鸟不拉屎](https://juejin.im/user/5b3de9155188251aa0161fe4)
+
+博客园：[鸟不拉屎](https://www.cnblogs.com/niaobulashi)
+
+知乎：[鸟不拉屎](https://www.zhihu.com/people/hu-lang-lang-91/)
+
+微博：[胡浪同學](https://www.weibo.com/godloveharry)
+
+
 
 
 [1]: http://manage.niaobulashi.com

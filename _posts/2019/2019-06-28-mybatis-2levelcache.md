@@ -199,11 +199,7 @@ private int updateUser(@RequestBody SysUserEntity user) {
 
 3、在分布式环境下，由于默认的MyBatis Cache实现都是基于本地的，分布式环境下必然会出现读取到脏数据，需要使用集中式缓存将MyBatis的Cache接口实现，有一定的开发成本，直接使用Redis、Memcached等分布式缓存可能成本更低，安全性也更高。
 
-不过建议Mybatis的缓存特性再生产环境下进行关闭，单纯作为一个
-
-[ORM框架]: https://www.cnblogs.com/wisdo/p/4279091.html
-
-使用可能更加合适。
+不过建议Mybatis的缓存特性再生产环境下进行关闭，单纯作为一个[ORM框架](https://www.cnblogs.com/wisdo/p/4279091.html)使用可能更加合适。
 
 
 
@@ -215,9 +211,21 @@ private int updateUser(@RequestBody SysUserEntity user) {
 
 
 
--------------
+------
 
-**作者：鸟不拉屎**
-**出处：[https://niaobulashi.com/](https://niaobulashi.com/)**   
-**版权所有，欢迎保留原文链接进行转载 :)**
+关于作者：
+
+个人博客：[鸟不拉屎](https://niaobulashi.com)
+
+github主页：[niaobulashi](https://github.com/niaobulashi)
+
+github博客：[鸟不拉屎](https://niaobulashi.github.io)
+
+掘金：[鸟不拉屎](https://juejin.im/user/5b3de9155188251aa0161fe4)
+
+博客园：[鸟不拉屎](https://www.cnblogs.com/niaobulashi)
+
+知乎：[鸟不拉屎](https://www.zhihu.com/people/hu-lang-lang-91/)
+
+微博：[胡浪同學](https://www.weibo.com/godloveharry)
 
