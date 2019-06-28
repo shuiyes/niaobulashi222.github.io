@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring Boot2(一)：使用Spring Boot2集成Mybatis缓存机制
+title: Spring Boot2(二)：使用Spring Boot2集成Mybatis缓存机制
 category: springboot
 tags: [springboot]
 copyright: java
