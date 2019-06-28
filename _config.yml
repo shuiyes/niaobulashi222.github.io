@@ -63,11 +63,6 @@ menus:
     target: _blank
 
   -
-    href: /gitchat.html
-    label: Chat
-    target: _self
-
-  -
     href: https://www.cnblogs.com/niaobulashi
     label: 博客园
     target: _blank
