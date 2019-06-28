@@ -184,7 +184,7 @@ public interface SysUserDao {
 }
 ```
 
-### 5、编写Service层的代码
+### 6、编写Service层的代码
 
 `SysUserService`接口类：
 
