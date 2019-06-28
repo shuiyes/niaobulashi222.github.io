@@ -250,3 +250,11 @@ public class MabatisTest {
 SpringBoot和Mybatis这对CP，完美
 
 **[示例代码-github](https://github.com/niaobulashi/spring-boot-mybatis/tree/master/mybatis_01_hello)**
+
+
+
+-------------
+
+**作者：鸟不拉屎**
+**出处：[https://niaobulashi.com/](https://niaobulashi.com/)**   
+**版权所有，欢迎保留原文链接进行转载 :)**

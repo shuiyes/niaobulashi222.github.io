@@ -212,3 +212,12 @@ private int updateUser(@RequestBody SysUserEntity user) {
 
 
 **[示例代码-github](<https://github.com/niaobulashi/spring-boot-mybatis/tree/master/mybatis_02_cache>)**
+
+
+
+-------------
+
+**作者：鸟不拉屎**
+**出处：[https://niaobulashi.com/](https://niaobulashi.com/)**   
+**版权所有，欢迎保留原文链接进行转载 :)**
+
