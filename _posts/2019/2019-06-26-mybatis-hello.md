@@ -116,7 +116,7 @@ public class MybatisApplication {
 
 或者直接在 Mapper 类上面添加注解`@Mapper`，建议使用上面那种，不然每个 mapper 加个注解也挺麻烦的
 
-### 3、添加 User 的映射文件
+### 3、添加 User 的实例
 
 ```java
 @Data

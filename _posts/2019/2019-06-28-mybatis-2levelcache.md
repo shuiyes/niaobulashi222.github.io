@@ -10,7 +10,7 @@ copyright: java
 
 学习SpringBoot集成Mybatis的第二章，了解到Mybatis自带的缓存机制，在部署的时候踩过了一些坑。在此记录和分享一下Mybatis的缓存作用。
 
-
+ 本文章的源码再文章末尾
 
 ## 什么是查询缓存
 
@@ -68,6 +68,8 @@ Mybatis的二级缓存是指mapper映射文件。二级缓存的作用域是同�
 好了，现在来创建项目，可以根据前一篇文章来创建项目，在这基础上修改
 
 [Spring Boot2(一)：使用Spring Boot2集成Mybatis基础搭建]: https://niaobulashi.github.io/springboot/2019/06/26/mybatis-hello.html
+
+
 
 ### pom.xml新增mybatis缓存包caches
 
@@ -159,11 +161,11 @@ private int updateUser(@RequestBody SysUserEntity user) {
 
 通过postman发送接口请求进行测试：
 
-- 发送查询用户全部信息：http://localhost:8080/getAll
+- 1、发送查询用户全部信息：http://localhost:8080/getAll
 
-- 根据userId查询用户信息：http://localhost:8080/getUser?userId=1
+- 2、根据userId查询用户信息：http://localhost:8080/getUser?userId=1
 
-- 更新用户信息http://localhost:8080/updateUser
+- 3、更新用户信息http://localhost:8080/updateUser
 
   更新用户信息接口发送报文:
 
@@ -175,3 +177,38 @@ private int updateUser(@RequestBody SysUserEntity user) {
 }
 ```
 
+通过日志可以看到，第一次发送1接口请求，对数据库进行了查询
+
+![](<https://niaobulashi.github.io/assets/images/2019/springboot/mybatis_02_01.png>)
+
+可以看到，第二次和第三次查询没有查询数据库的SQL打印，而是去数据库获取数据
+
+此时发送3接口，进行更新操作，在发送1接口，查询改用户的数据
+
+![](<https://niaobulashi.github.io/assets/images/2019/springboot/mybatis_02_02.png>)
+
+可以看到，当执行数据库更新操作后，再进行查询，此时缓存已经清空，需要从数据库中重新查询获取。
+
+这就演示了SpringBoot整合Mybatis的缓存机制测试。
+
+## 总结
+
+1、缓存的对象必须实现序列化。因为二级缓存的数据不一定都是存储到内存中，它的存储介质多种多样，所以需要给缓存的对象执行序列化，才可以确保获取无误。
+
+2、Mybatis的二级缓存相比于一级缓存来说，实现了SqlSession之间的缓存数据的共享，做到namespace级别，粒度更细
+
+3、在分布式环境下，由于默认的MyBatis Cache实现都是基于本地的，分布式环境下必然会出现读取到脏数据，需要使用集中式缓存将MyBatis的Cache接口实现，有一定的开发成本，直接使用Redis、Memcached等分布式缓存可能成本更低，安全性也更高。
+
+不过建议Mybatis的缓存特性再生产环境下进行关闭，单纯作为一个
+
+[ORM框架]: https://www.cnblogs.com/wisdo/p/4279091.html
+
+使用可能更加合适。
+
+
+
+下篇文章计划写SpringBoot整合Mybatis，使用Redis实现缓存基本配置。
+
+
+
+**[示例代码-github](<https://github.com/niaobulashi/spring-boot-mybatis/tree/master/mybatis_02_cache>)**
