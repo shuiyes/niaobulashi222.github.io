@@ -207,7 +207,7 @@ private int updateUser(@RequestBody SysUserEntity user) {
 
 
 
-**[示例代码-github](<https://github.com/niaobulashi/spring-boot-mybatis/tree/master/mybatis_02_cache>)**
+**[示例代码-github](https://github.com/niaobulashi/spring-boot-learning/tree/master/spring-boot-11-mybatis-cache)**
 
 
 ---
