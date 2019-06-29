@@ -720,5 +720,21 @@ private void flushCacheIfRequired(MappedStatement ms)
 本文对介绍了MyBatis一二级缓存的基本概念，并从应用及源码的角度对MyBatis的缓存机制进行了分析。最后对MyBatis缓存机制做了一定的总结，个人建议MyBatis缓存特性在生产环境中进行关闭，单纯作为一个ORM框架使用可能更为合适。
 
 
+**[示例代码-github](https://github.com/niaobulashi/spring-boot-learning/tree/master/spring-boot-11-mybatis-cache)**
 
-原文地址：<https://tech.meituan.com/2018/01/19/mybatis-cache.html>
+---
+关于作者：
+
+个人博客：[鸟不拉屎](https://niaobulashi.com)
+
+github主页：[niaobulashi](https://github.com/niaobulashi)
+
+github博客：[鸟不拉屎](https://niaobulashi.github.io)
+
+掘金：[鸟不拉屎](https://juejin.im/user/5b3de9155188251aa0161fe4)
+
+博客园：[鸟不拉屎](https://www.cnblogs.com/niaobulashi)
+
+知乎：[鸟不拉屎](https://www.zhihu.com/people/hu-lang-lang-91/)
+
+微博：[胡浪同學](https://www.weibo.com/godloveharry)
