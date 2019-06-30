@@ -217,5 +217,3 @@ github博客：[鸟不拉屎](https://niaobulashi.github.io)
 
 知乎：[鸟不拉屎](https://www.zhihu.com/people/hu-lang-lang-91/)
 
-微博：[胡浪同學]()
-
