@@ -22,7 +22,7 @@ copyright: java
 
 快速建立Spring Boot项目
 
-#### 添加redis依赖
+### 添加redis依赖
 
 ```xml
 <dependency>
@@ -31,7 +31,7 @@ copyright: java
 </dependency>
 ```
 
-#### application.yml配置
+### application.yml配置
 
 ```xml
 spring:
@@ -48,7 +48,7 @@ spring:
         min-idle: 5 # 连接池中的最小空闲连接
 ```
 
-#### RedisConfig配置类
+### RedisConfig配置类
 
 ```java
 @Autowired
@@ -71,7 +71,7 @@ public RedisTemplate<String, Object> redisTemplate() {
 }
 ```
 
-#### RedisUtils工具类
+### RedisUtils工具类
 
 ```java
 @Autowired
@@ -97,7 +97,7 @@ private SetOperations<String, Object> setOperations;
 private ZSetOperations<String, Object> zSetOperations;
 ```
 
-#### 实体类SysCodeEntity
+### 实体类SysCodeEntity
 
 ```java
 @Data
@@ -119,7 +119,7 @@ public class SysCodeEntity implements Serializable {
 }
 ```
 
-#### ServiceImpl实现类
+### ServiceImpl实现类
 
 ```
 /**
@@ -146,7 +146,7 @@ public List<SysCodeEntity> queryCodeAll() {
 
 上面例子具体解释已经在注释中体现，通过opsForList的leftPop和leftPush存入和获取Redis缓存的数据。
 
-#### Controller层实现
+### Controller层实现
 
 ```java
 /**
@@ -163,7 +163,7 @@ private List<SysCodeEntity> getUser() {
 }
 ```
 
-#### Postman进行测试
+### Postman进行测试
 
 ```
 http://localhost:8080/getAll
