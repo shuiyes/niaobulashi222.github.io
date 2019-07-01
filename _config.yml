@@ -63,11 +63,6 @@ menus:
     target: _blank
 
   -
-    href: https://www.cnblogs.com/niaobulashi
-    label: 博客园
-    target: _blank
-
-  -
     href: /life.html
     label: 故事
     target: _self
