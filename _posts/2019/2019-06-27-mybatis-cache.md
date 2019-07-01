@@ -719,7 +719,6 @@ private void flushCacheIfRequired(MappedStatement ms)
 
 本文对介绍了MyBatis一二级缓存的基本概念，并从应用及源码的角度对MyBatis的缓存机制进行了分析。最后对MyBatis缓存机制做了一定的总结，个人建议MyBatis缓存特性在生产环境中进行关闭，单纯作为一个ORM框架使用可能更为合适。
 
-
 ---
 关于作者：
 
