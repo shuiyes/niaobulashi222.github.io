@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring Boot2(四)：使用Spring Boot多数据源实现读写分离
+title: Spring Boot2(四)：使用Spring Boot多数据源实现过程
 category: springboot
 tags: [springboot]
 copyright: java
