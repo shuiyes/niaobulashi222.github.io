@@ -389,7 +389,7 @@ public interface SysUserInfo {
 
 ## 五、源码
 
-github源码地址：Spring Boot2(九)：整合Jpa的基本使用
+github源码地址：[Spring Boot2(九)：整合Jpa的基本使用](https://github.com/niaobulashi/spring-boot-learning/tree/master/spring-boot-18-jpa02)
 
 To be continued...
 
