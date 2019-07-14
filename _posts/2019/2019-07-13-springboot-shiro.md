@@ -107,7 +107,7 @@ public class ShiroApplication {
 
 看下面这张图，可以说相当明了了。
 
-
+![用户角色权限关系表](https://images.niaobulashi.com/typecho/uploads/2019/07/2956571916.png)
 
 具体我就不贴出来了，太占篇幅。。直接贴链接：https://github.com/niaobulashi/spring-boot-learning/blob/master/spring-boot-20-shiro/db/test.sql
 
