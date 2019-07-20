@@ -6,11 +6,9 @@ tags: [springboot]
 copyright: java
 ---
 
-## 一、前言
-
 文件上传和下载在项目中经常用到，这里主要学习SpringBoot完成单个文件上传/下载，批量文件上传的场景应用。结合mysql数据库、jpa数据层操作、thymeleaf页面模板。
 
-## 二、准备
+## 一、准备
 
 ### 添加maven依赖
 
@@ -148,7 +146,7 @@ CREATE TABLE `sys_file_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文件信息表';
 ```
 
-## 三、代码实现
+## 二、代码实现
 
 ### 结构目录
 
@@ -618,6 +616,6 @@ public ResponseCode batchUpload(@RequestParam("files") MultipartFile[] files) th
 
 至此项目完成，开始测试
 
-### 四、测试
+### 三、测试
 
 ![](<https://niaobulashi.github.io/assets/images/2019/springboot/springboot-fileupload-02.gif>)

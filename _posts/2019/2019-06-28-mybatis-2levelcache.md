@@ -6,8 +6,6 @@ tags: [springboot]
 copyright: java
 ---
 
-## 前言
-
 学习SpringBoot集成Mybatis的第二章，了解到Mybatis自带的缓存机制，在部署的时候踩过了一些坑。在此记录和分享一下Mybatis的缓存作用。
 
  本文章的源码再文章末尾

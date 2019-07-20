@@ -6,11 +6,9 @@ tags: [springboot]
 copyright: java
 ---
 
-## 一、前言
-
 上次用Mybatis还是2017年做项目的时候，已经很久过去了。中途再没有用过Mybatis。导致现在学习SpringBoot过程中遇到一些Mybatis的问题，以此做出总结（XML极简模式）。当然只是实用方面的总结，具体就不深究♂了。**这里只总结怎么用！！！**
 
-## 二、关于Mybatis
+## 一、关于Mybatis
 
 ### 1、什么是Mybatis
 
@@ -56,7 +54,7 @@ copyright: java
 
 
 
-## 三、使用总结
+## 二、使用总结
 
 > 以下的用法实例建议将源码clone到本地运行，全部使用的是**XMl极简模式**
 >

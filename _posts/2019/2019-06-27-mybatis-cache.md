@@ -6,8 +6,6 @@ tags: [mybatis]
 copyright: java
 ---
 
-## 前言
-
 MyBatis是常见的Java数据库访问层框架。在日常工作中，开发人员多数情况下是使用MyBatis的默认缓存配置，但是MyBatis缓存机制有一些不足之处，在使用中容易引起脏数据，形成一些潜在的隐患。个人在业务开发中也处理过一些由于MyBatis缓存引发的开发问题，带着个人的兴趣，希望从应用及源码的角度为读者梳理MyBatis缓存机制。官方说明：`MyBatis Spring-Boot-Starter will help you use MyBatis with Spring Boot`  
 其实就是 Mybatis 看 Spring Boot 这么火热也开发出一套解决方案来凑凑热闹，但这一凑确实解决了很多问题，使用起来确实顺畅了许多。`mybatis-spring-boot-starter`主要有两种解决方案，一种是使用注解解决一切问题，一种是简化后的老传统。
 

@@ -6,11 +6,9 @@ tags: [springboot]
 copyright: java
 ---
 
-## 前言
-
 实际业务场景中，不可能只有一个库，所以就有了分库分表，多数据源的出现。实现了读写分离，主库负责增改删，从库负责查询。这篇文章将实现Spring Boot如何实现多数据源，动态数据源切换，读写分离等操作。
 
-## 代码部署
+## 一、代码部署
 
 快速新建项目spring-boot项目
 
@@ -427,7 +425,7 @@ public class SysUserController {
 }
 ```
 
-### 发送查询所有用户接口
+### 二、发送查询所有用户接口
 
 主库：http://localhost:8080/getUserMasterAll
 
@@ -437,7 +435,7 @@ public class SysUserController {
 
 ![](<https://niaobulashi.github.io/assets/images/2019/springboot/mybatis-mutli-04-05.png>)
 
-## 总结
+## 三、总结
 
 1、通过多数据源方式实现数据库层面的读写分离
 

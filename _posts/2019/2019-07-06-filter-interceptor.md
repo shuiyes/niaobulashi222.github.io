@@ -8,11 +8,9 @@ copyright: java
 
 ---
 
-## 一、前言
-
 过滤器和拦截器两者都具有AOP的切面思想，关于aop切面，可以看上一篇文章。过滤器filter和拦截器interceptor都属于面向切面编程的具体实现。
 
-## 二、过滤器
+## 一、过滤器
 
 ### 过滤器工作原理
 
@@ -129,7 +127,7 @@ public class HelloController {
 
 查看日志可以看到过滤器已经开始工作了。![测试截图Filter](https://niaobulashi.com/usr/uploads/2019/07/3298742304.png)
 
-## 三、拦截器
+## 二、拦截器
 
 ### 拦截器概念
 
@@ -251,7 +249,7 @@ public class HelloController {
 
 
 
-## 四、过滤器和拦截器的区别
+## 三、过滤器和拦截器的区别
 
 Spring的拦截器与Servlet的Filter有相似之处，比如二者都是AOP编程思想的体现，都能实现权限检查、日志记录等。
 
@@ -262,19 +260,19 @@ Spring的拦截器与Servlet的Filter有相似之处，比如二者都是AOP编�
 - 使用的资源不同：同其他的代码块一样，拦截器也是一个Spring的组件，归Spring管理，配置在Spring文件中，因此能使用Spring里的任何资源、对象，例如Service对象、数据源、事务管理等，通过loC注入到拦截器即可:而Filter则不能。
 - 深度不同：Filter在只在Servlet前后起作用。而拦截器能够深入到方法前后、异常抛出前后等，因此拦截器的使用具有更大的弹性。所以在Spring构架的程序中，要优先使用拦截器。
 
-## 五、总结
+## 四、总结
 注意：过滤器的触发时机是容器后，servlet之前，所以过滤器的doFilter(ServletRequest request, ServletResponse response, FilterChain chain)的入参是ServletRequest，而不是HttpServletRequest，因为过滤器是在HttpServlet之前。下面这个图，可以让你对Filter和Interceptor的执行时机有更加直观的认识。
 ![过滤器和拦截器关系图](https://niaobulashi.com/usr/uploads/2019/07/880490333.png)
 只有经过DispatcherServlet 的请求，才会走拦截器链，自定义的Servlet请求是不会被拦截的，比如我们自定义的Servlet地址。
 
 过滤器依赖于Servlet容器，而Interceptor则为SpringMVC的一部分。过滤器能够拦截所有请求，而Interceptor只能拦截Controller的请求，所以从覆盖范围来看，Filter应用更广一些。但是在Spring逐渐一统Java框架、前后端分离越演越烈，实际上大部分的应用场景，拦截器都可以满足了。
 
-## 六、源码
+## 五、源码
 [SpringBoot-过滤器spring-boot-16-filter](https://github.com/niaobulashi/spring-boot-learning/tree/master/spring-boot-16-filter)
 
 [SpringBoot-拦截器spring-boot-17-interceptor](https://github.com/niaobulashi/spring-boot-learning/tree/master/spring-boot-17-interceptor)
 
-## 七、参考
+## 六、参考
 
 [SpringBoot实现过滤器、拦截器与切片](https://juejin.im/post/5c6901206fb9a049af6dcdcf)
 [Spring Boot实战：拦截器与过滤器](https://www.cnblogs.com/paddix/p/8365558.html)

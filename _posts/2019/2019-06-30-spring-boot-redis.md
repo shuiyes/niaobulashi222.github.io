@@ -6,19 +6,17 @@ tags: [springboot]
 copyright: java
 ---
 
-## 前言
-
 前面一节总结了[SpringBoot实现Mybatis的缓存机制](<https://niaobulashi.github.io/springboot/2019/06/28/mybatis-2levelcache.html>)，但是实际项目中很少用到Mybatis的二级缓存机制，反而用到比较多的是第三方缓存[Redis](<https://redis.io/>)。
 
 **Redis**是一个使用ANSI C编写的开源、支持网络、基于内存、可选持久性的键值对存储数据库。
 
-## 安装启动Redis
+## 一、安装启动Redis
 
 安装Redis的就不讲太多了，直接去[官方下载redis](<https://github.com/microsoftarchive/redis/releases/tag/win-3.2.100>)，下载[Redis-x64-3.2.100.zip](https://github.com/microsoftarchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.zip)，cmd，在redis目录下输入：redis-server.exe redis.windows.conf启动即可
 
 另外可以通过Redis桌面客户端可视化连接工具操作：[redisdesktop](<https://redisdesktop.com/>)
 
-## 代码部署
+## 二、代码部署
 
 快速建立Spring Boot项目
 
@@ -173,7 +171,7 @@ http://localhost:8080/getAll
 
 ![](<https://niaobulashi.github.io/assets/images/2019/springboot/springboot_03_01.png>)
 
-## 总结和扩展
+## 三、总结和扩展
 
 1、Redis支持：字符串String、哈希Hash、列表List、集合Set、有序集合Sorted Set、发布订阅Pub/Sub、事务Transactions，7种数据类型
 

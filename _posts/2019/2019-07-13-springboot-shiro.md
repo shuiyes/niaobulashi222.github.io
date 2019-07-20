@@ -6,8 +6,6 @@ tags: [springboot]
 copyright: java
 ---
 
-## 一、前言
-
 SpringBoot+Shiro+Mybatis完成的。
 
 之前看了一位小伙伴的Shiro教程，跟着做了，遇到蛮多坑的(´இ皿இ｀)
@@ -16,7 +14,7 @@ SpringBoot+Shiro+Mybatis完成的。
 
 不多比比∠( ᐛ 」∠)＿，直接上源码：https://github.com/niaobulashi/spring-boot-learning/tree/master/spring-boot-20-shiro
 
-## 二、Shiro是啥
+## 一、Shiro是啥
 
 Apache Shiro是一个功能强大、灵活的、开源的安全框架。可以干净利落地处理身份验证、授权、企业会话管理和加密。
 

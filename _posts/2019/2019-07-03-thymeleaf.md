@@ -6,8 +6,6 @@ tags: [springboot]
 copyright: java
 ---
 
-## 一、Thymeleaf概述
-
 一般来说，常用的模板引擎有JSP、Velocity、Freemarker、Thymeleaf 。
 
 SpringBoot推荐的 Thymeleaf – 语法更简单，功能更强大；
@@ -15,7 +13,7 @@ SpringBoot推荐的 Thymeleaf – 语法更简单，功能更强大；
 Thymeleaf是一种Java XML/XHTML/HTML5模板引擎，可以在Web和非Web环境中使用。
 它更适合在基于MVC的Web应用程序的视图层提供XHTML/HTML5，但即使在脱机环境中，它也可以处理任何XML文件。它提供了完整的Spring Framework集成。
 
-## 二、 标准表达式语法
+## 一、 标准表达式语法
 
 它们分为四类：
 
@@ -164,7 +162,7 @@ URL还可以设置参数：
 'User is of type ' + (${user.isAdmin()} ? 'Administrator' : (${user.type} ?: 'Unknown'))
 ```
 
-## 三、常用的th标签
+## 二、常用的th标签
 
 官方文档详细的一批：
 <https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html>
@@ -197,7 +195,7 @@ URL还可以设置参数：
 
 还有非常多的标签，这里只列出最常用的几个,由于一个标签内可以包含多个th:x属性，其生效的优先级顺序为:`include,each,if/unless/switch/case,with,attr/attrprepend/attrappend,value/href,src ,etc,text/utext,fragment,remove。 `
 
-## 四、表达式
+## 三、表达式
 
 **简单表达式**
 
@@ -241,7 +239,7 @@ URL还可以设置参数：
 - (if) ? (then) : (else)
 - 三元：(value) ? value : defaultvalue
 
-## 五、表达式对象
+## 四、表达式对象
 
 表达式里面的对象可以帮助我们处理要展示的内容，比如表达式的工具类dates可以格式化时间，这些内置类的熟练使用，可以让我们使用Thymeleaf的效率提高很多。
 
@@ -269,7 +267,7 @@ URL还可以设置参数：
 - \#maps: Map操作工具.
 - \#aggregates: 操作数组或集合的工具.
 
-## 六、几种常用的使用方法
+## 五、几种常用的使用方法
 
 ### 1、赋值、字符串拼接
 
@@ -463,7 +461,7 @@ ${#strings.concatReplaceNulls(str)}
 ${#strings.randomAlphanumeric(count)}
 ```
 
-## 七、使用基本步骤
+## 六、使用基本步骤
 
 我认为可以大致分为四步：
 
@@ -586,7 +584,7 @@ public String kownMe(Map<String,Object> map) {
 
 ![](https://niaobulashi.github.io/assets/images/2019/springboot/thymeleaf-05-01.png)
 
-## 八、参考
+## 七、参考
 
 [Thymeleaf 使用详解](http://www.ityouknow.com/springboot/2016/05/01/spring-boot-thymeleaf.html)
 

@@ -6,8 +6,6 @@ tags: [springboot]
 copyright: java
 ---
 
-## 一、前言
-
 今天早上看到一篇微信文章，说的是国内普遍用的Mybatis，而国外确普遍用的是Jpa。我之前也看了jpa，发现入门相当容易。jpa对于简单的CRUD支持非常好，开发效率也会比Mybatis高出不少，因为`JpaRepository`会根据你定制的实体类，继承了`JpaRepository`会有一套完整的封装好了的基本条件方法。减少了很多开发量。你只需要写SQL就行了。可能我才刚入门Jpa，对一些认识还是很浅显。我觉得Jpa对于多表查询，开发起来有点吃力。。
 
 这是我开始玩Jpa的最初的感受，但是Jpa却受到了极大的支持和赞扬，在国外Jpa远比Mybatis流行得多得多。国内却还是在流程用Mybatis，估计也是收到很多培训机构或者大V的带领下，很多国内优秀的开源项目也是用的Mybatis，因为已经用得非常熟练了。
@@ -16,7 +14,7 @@ copyright: java
 
 这里具体讲一讲Jpa的搭建，几种常见的场景的使用：增删改查、多表查询，非主键查询这几种情况的一个学习总结。
 
-## 二、代码部署
+## 一、代码部署
 
 ### 1、添加Maven依赖
 
@@ -365,7 +363,7 @@ public interface SysUserInfo {
 }
 ```
 
-## 三、测试
+## 二、测试
 
 启动项目之前，将`spring.jpa.hibernate.ddl-auto`改为`create`。启动完成之后改为update或者none。
 
@@ -377,7 +375,7 @@ public interface SysUserInfo {
 
 之后可以进行具体的数据库接口操作啦。
 
-## 四、总结
+## 三、总结
 
 在学习过程中，敲代码也遇到不少坑，感觉Jpa还行，确实比Mybatis快了不少，不需要建立mapper.xml文件。
 
@@ -387,7 +385,7 @@ public interface SysUserInfo {
 
 
 
-## 五、源码
+## 四、源码
 
 github源码地址：[Spring Boot2(九)：整合Jpa的基本使用](https://github.com/niaobulashi/spring-boot-learning/tree/master/spring-boot-18-jpa02)
 
