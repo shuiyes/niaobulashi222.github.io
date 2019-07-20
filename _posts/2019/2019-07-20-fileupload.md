@@ -128,6 +128,8 @@ niaobulashi:
 
 最下面是自定义的配置属性，定义了文件存放路径和上传文件允许的后缀名称。
 
+需要注意的是：`niaobulashi.file.path`，为你磁盘上的目录，根据你实际的目录**修改**。
+
 ### 数据库表sys_file_info
 
 ```sql
@@ -150,7 +152,7 @@ CREATE TABLE `sys_file_info` (
 
 ### 结构目录
 
-![](<https://niaobulashi.github.io/assets/images/2019/springboot/springboot-fileload-01.png>)
+![](https://niaobulashi.github.io/assets/images/2019/springboot/springboot-fileload-01.png)
 
 ### 页面file.html
 
@@ -618,4 +620,11 @@ public ResponseCode batchUpload(@RequestParam("files") MultipartFile[] files) th
 
 ### 三、测试
 
-![](<https://niaobulashi.github.io/assets/images/2019/springboot/springboot-fileupload-02.gif>)
+![](https://niaobulashi.github.io/assets/images/2019/springboot/springboot-upload02.gif)
+
+### 四、源码
+
+emmm，私藏的可爱图片也给你们啦
+
+源码地址：[spring-boot-learning](https://github.com/niaobulashi/spring-boot-learning/tree/master/spring-boot-22-updownload)
+欢迎star、fork，给作者一些鼓励
