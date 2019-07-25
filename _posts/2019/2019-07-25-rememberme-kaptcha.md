@@ -74,7 +74,7 @@ public SimpleCookie rememberMeCookie() {
 
 SimleCookie参数中的名称为页面的name标签属性名称。
 
-实现了Cookie对象属性配置，我们还需要通过`CookieRememberMeManager`进行管理起来。
+实现了Cookie对象属性配置，还需要通过`CookieRememberMeManager`进行管理起来。
 
 ```java
 /**
@@ -105,7 +105,7 @@ public SecurityManager securityManager() {
 }
 ```
 
-### 加密
+### 加密处理
 
 《Spring Boot2(十二)：手摸手教你搭建Shiro安全框架》这个项目中用的明文，这里我们升个级，使用MD5加密
 
@@ -137,9 +137,123 @@ public class MD5Utils {
 }
 ```
 
-其中`SALT`是加密的盐，main方法中，根据登录名和密码明文，输出最终加密的密文，将输出内容粘贴到我们的数据库中，待后续登录时使用。
+其中`SALT`是加密的盐，可自行定义。
 
-。。。To be continued
+main方法中，根据登录名和密码明文，输出最终加密的密文，将输出内容粘贴到我们的数据库中，待后续登录时使用。
+
+### 新增登录页面和主页面
+
+login.html
+
+添加Remember Me checkbox
+
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" th:href="@{/static/css/login.css}" type="text/css">
+    <script th:src="@{/static/js/jquery-1.11.1.min.js}"></script>
+</head>
+<body>
+<div class="login-page">
+    <div class="form">
+        <input type="text" placeholder="用户名" name="account" required="required"/>
+        <input type="password" placeholder="密码" name="password" required="required"/>
+        <p><input type="checkbox" name="rememberMe"/>记住我</p>
+        <button onclick="login()">登录</button>
+    </div>
+</div>
+</body>
+<script th:inline="javascript">var ctx = [[@{/}]];</script>
+<script th:inline="javascript">
+    function login() {
+        var account = $("input[name='account']").val();
+        var password = $("input[name='password']").val();
+        var rememberMe = $("input[name='rememberMe']").is(':checked');
+        $.ajax({
+            type: "post",
+            url: ctx + "login",
+            data: {
+                "account": account,
+                "password": password,
+                "rememberMe": rememberMe
+            },
+            success: function(r) {
+                if (r.code == 100) {
+                    location.href = ctx + 'index';
+                } else {
+                    alert(r.message);
+                }
+            }
+        });
+    }
+</script>
+</html>
+```
+
+静态资源js和css可以在源码中查看
+
+![登录页面](https://images.niaobulashi.com/typecho/uploads/2019/07/2309019532.png)
+
+index.html
+
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<p>你好！[[${user.getUsername()}]]</p>
+<a th:href="@{/logout}">注销</a>
+</body>
+</html>
+```
+
+### Controller层
+
+在原来的基础上，新增参数rememberMe，同时对用户名和明文密码进行MD5加密处理获得密文。
+
+```java
+/**
+ * 登录操作
+ * @param account
+ * @param password
+ * @param rememberMe
+ * @return
+ */
+@PostMapping("/login")
+@ResponseBody
+public ResponseCode login(String account, String password, Boolean rememberMe) {
+	logger.info("登录请求-start");
+	password = MD5Utils.encrypt(account, password);
+	Subject userSubject = SecurityUtils.getSubject();
+	UsernamePasswordToken token = new UsernamePasswordToken(account, password, rememberMe);
+	try {
+		// 登录验证
+		userSubject.login(token);
+		return ResponseCode.success();
+	} catch (UnknownAccountException e) {
+		return ResponseCode.error(StatusEnums.ACCOUNT_UNKNOWN);
+	} catch (DisabledAccountException e) {
+		return ResponseCode.error(StatusEnums.ACCOUNT_IS_DISABLED);
+	} catch (IncorrectCredentialsException e) {
+		return ResponseCode.error(StatusEnums.INCORRECT_CREDENTIALS);
+	} catch (AuthenticationException e) {
+		return ResponseCode.error(StatusEnums.AUTH_ERROR);
+	} catch (Throwable e) {
+		e.printStackTrace();
+		return ResponseCode.error(StatusEnums.SYSTEM_ERROR);
+	}
+}
+```
+
+启动项目，进行测试可以看到效果如下：
+
+
 
 ## 四、源码
 
