@@ -33,40 +33,11 @@ copyright: java
 
 通过以上分析，可以使用二维数组来校验是否为连续的区间
 
-```
-package javatest;
- 
-import org.apache.commons.lang.StringUtils;
- 
-import java.util.List;
- 
-/**
- * @version V1.0
- * @Description: 测试
- * @author: niaobulashi
- * @date: 2020/09/23
- */
-public class Test {
-    public static void main(String[] args) {
-        // 创建一个二维数组
-        //String a[][] = {{"0", "800000"}, {"800000", "1600000.2"}, {"1600000.2", "-1"}};
-        if (!"0".equals(a[0][0])) {
-            System.out.println("返回错误信息：不是以0开头，该区间为不连续区间");
-        }
-        if (!"-1".equals(a[a.length - 1][a[0].length - 1])) {
-            System.out.println("返回错误信息：不是以正无穷结尾，该区间为不连续区间");
-        }
-        for (int k = 0; k < a.length - 1; k++) {
-            if (!StringUtils.equals(a[k][1], a[k + 1][0])) {
-                System.out.println("返回错误信息：该区间为不连续区间");
-            }
-        }
-    }
-}
-```
+![代码截图][2]
 
 
   [1]: https://images.niaobulashi.com/typecho/uploads/2020/09/1047437796.png
+  [2]: https://images.niaobulashi.com/typecho/uploads/2020/12/1173788277.png
 
 
 
