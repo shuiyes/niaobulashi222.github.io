@@ -8,14 +8,14 @@ This is a JavaScript port of [jasonlong/geo_pattern](https://github.com/jasonlon
 
 Include the [minified script](js/geopattern.min.js). jQuery is optional.
 
-```
+```HTML
 <script src="js/jquery.min.js"></script> <!-- optional -->
 <script src="js/geopattern.min.js"></script>
 ```
 
 Use either the `GeoPattern` browser global or the jQuery plugin:
 
-```Script
+```JavaScript
 // Use the global...
 var pattern = GeoPattern.generate('GitHub');
 $('#geopattern').css('background-image', pattern.toDataUrl());

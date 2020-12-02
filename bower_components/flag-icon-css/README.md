@@ -24,7 +24,7 @@ For using the flags inline with text add the classes `.flag-icon` and
 of a country) to an empty `<span>`. If you want to have a squared version flag
 then add the class `flag-icon-squared` as well. Example:
 
-```
+```html
 <span class="flag-icon flag-icon-gr"></span>
 <span class="flag-icon flag-icon-gr flag-icon-squared"></span>
 ```
