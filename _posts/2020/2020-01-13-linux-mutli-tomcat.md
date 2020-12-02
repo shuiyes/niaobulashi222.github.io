@@ -3,7 +3,7 @@ layout: post
 title: linux 同时启动多个tomcat
 category: Java
 tags: [Java]
-copyright: Java
+copyright: java
 
 ---
 

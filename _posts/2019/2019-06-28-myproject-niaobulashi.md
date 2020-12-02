@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2版的权限管理系统
 category: springboot
 tags: [springboot]
-copyright: Java
+copyright: java
 ---
 
 ![](https://ws1.sinaimg.cn/large/a3d658ably1g432kp5qphj21hc0q11kx.jpg)

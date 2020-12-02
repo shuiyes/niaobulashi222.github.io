@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(十二)：手摸手教你搭建Shiro安全框架
 category: springboot
 tags: [springboot]
-copyright: Java
+copyright: java
 ---
 
 SpringBoot+Shiro+Mybatis完成的。

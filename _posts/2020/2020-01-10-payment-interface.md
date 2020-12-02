@@ -3,7 +3,7 @@ layout: post
 title: 网上支付平台接口使用总结
 category: Java
 tags: [Java]
-copyright: Java
+copyright: java
 
 ---
 

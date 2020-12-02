@@ -3,7 +3,7 @@ layout: post
 title: 解析json报文，获取key的value
 category: Java
 tags: [Java]
-copyright: Java
+copyright: java
 
 ---
 

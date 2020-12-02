@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(十四)：单文件上传/下载，文件批量上传
 category: springboot
 tags: [springboot]
-copyright: Java
+copyright: java
 ---
 
 文件上传和下载在项目中经常用到，这里主要学习SpringBoot完成单个文件上传/下载，批量文件上传的场景应用。结合mysql数据库、jpa数据层操作、thymeleaf页面模板。

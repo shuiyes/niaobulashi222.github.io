@@ -3,7 +3,7 @@ layout: post
 title: 什么是多租户
 category: Java
 tags: [Java]
-copyright: Java
+copyright: java
 
 ---
 

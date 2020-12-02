@@ -3,7 +3,7 @@ layout: post
 title: Mysql的Explain使用及索引总结
 category: Java
 tags: [Java]
-copyright: Java
+copyright: java
 
 ---
 

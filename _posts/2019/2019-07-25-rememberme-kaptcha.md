@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(十五)：Shiro记住我rememberMe、验证码Kaptcha
 category: springboot
 tags: [springboot]
-copyright: Java
+copyright: java
 ---
 
 接着上次学习的《Spring Boot2(十二)：手摸手教你搭建Shiro安全框架》，实现了Shiro的认证和授权。今天继续在这个基础上学习Shiro实现功能记住我rememberMe，以及登录时验证码Kaptcha。

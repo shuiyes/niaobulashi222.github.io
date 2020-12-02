@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(五)：使用Spring Boot结合Thymeleaf模板引擎使用总结
 category: springboot
 tags: [springboot]
-copyright: Java
+copyright: java
 ---
 
 一般来说，常用的模板引擎有JSP、Velocity、Freemarker、Thymeleaf 。

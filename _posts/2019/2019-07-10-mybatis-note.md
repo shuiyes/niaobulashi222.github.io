@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(十一)：Mybatis使用总结（自增长、多条件、批量操作、多表查询等等）
 category: springboot
 tags: [springboot]
-copyright: Java
+copyright: java
 ---
 
 上次用Mybatis还是2017年做项目的时候，已经很久过去了。中途再没有用过Mybatis。导致现在学习SpringBoot过程中遇到一些Mybatis的问题，以此做出总结（XML极简模式）。当然只是实用方面的总结，具体就不深究♂了。**这里只总结怎么用！！！**

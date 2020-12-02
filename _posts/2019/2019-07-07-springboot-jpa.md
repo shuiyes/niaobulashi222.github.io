@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(九)：整合Jpa的基本使用
 category: springboot
 tags: [springboot]
-copyright: Java
+copyright: java
 ---
 
 今天早上看到一篇微信文章，说的是国内普遍用的Mybatis，而国外确普遍用的是Jpa。我之前也看了jpa，发现入门相当容易。jpa对于简单的CRUD支持非常好，开发效率也会比Mybatis高出不少，因为`JpaRepository`会根据你定制的实体类，继承了`JpaRepository`会有一套完整的封装好了的基本条件方法。减少了很多开发量。你只需要写SQL就行了。可能我才刚入门Jpa，对一些认识还是很浅显。我觉得Jpa对于多表查询，开发起来有点吃力。。

@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(十三)：整合定时任务发送邮件
 category: springboot
 tags: [springboot]
-copyright: Java
+copyright: java
 ---
 
 主要玩一下SpringBoot的定时任务和发送邮件的功能。定时发送邮件，这在实际生成环境下主要用户系统性能监控时，当超过设定的阙值，就发送邮件通知预警功能。这里只通过简单的写个定时结合邮件通知进行学习。

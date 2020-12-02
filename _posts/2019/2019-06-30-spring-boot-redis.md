@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(三)：使用Spring Boot2集成Redis缓存
 category: springboot
 tags: [springboot]
-copyright: Java
+copyright: java
 ---
 
 前面一节总结了[SpringBoot实现Mybatis的缓存机制](<https://niaobulashi.github.io/springboot/2019/06/28/mybatis-2levelcache.html>)，但是实际项目中很少用到Mybatis的二级缓存机制，反而用到比较多的是第三方缓存[Redis](<https://redis.io/>)。

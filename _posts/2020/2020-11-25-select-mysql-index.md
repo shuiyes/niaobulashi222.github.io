@@ -3,7 +3,7 @@ layout: post
 title: Mysql索引类型如何选择？
 category: Java
 tags: [Java]
-copyright: Java
+copyright: java
 
 ---
 

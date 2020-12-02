@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(一)：使用Spring Boot2集成Mybatis基础搭建
 category: springboot
 tags: [springboot]
-copyright: Java
+copyright: java
 ---
 
 Mybatis 初期使用比较麻烦，需要各种配置文件、实体类、Dao 层映射关联、还有一大推其它配置。`mybatis-spring-boot-starter` 就是 Spring Boot+ Mybatis 可以完全注解不用配置文件，也可以简单配置轻松上手。

@@ -3,7 +3,7 @@ layout: post
 title: 图解！24张图彻底弄懂九大常见数据结构！（转）
 category: Java
 tags: [Java]
-copyright: Java
+copyright: java
 
 ---
 

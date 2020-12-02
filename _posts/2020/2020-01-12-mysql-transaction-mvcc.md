@@ -3,7 +3,7 @@ layout: post
 title: Mysql锁、事务隔离级别、MVCC底层原理机制
 category: Java
 tags: [Java]
-copyright: Java
+copyright: java
 
 ---
 
