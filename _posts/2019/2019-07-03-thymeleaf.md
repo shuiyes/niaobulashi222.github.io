@@ -515,7 +515,7 @@ spring:
 @RequestMapping("/me")
 public String kownMe(Map<String,Object> map) {
     List<String> list = new ArrayList<String>();
-    list.add("鸟不拉屎：一个正在努力Coding的未来架构师");
+    list.add("鸟不拉诗：一个正在努力Coding的未来架构师");
     list.add("记录菜鸟的成长");
     list.add("个人博客：https://niaobulashi.com");
     list.add("github博客：https://niaobulashi.github.io");
@@ -546,7 +546,7 @@ public String kownMe(Map<String,Object> map) {
 <head>
     <meta charset="UTF-8">
     <meta content="text/html;charset=UTF-8"/>
-    <title>鸟不拉屎</title>
+    <title>鸟不拉诗</title>
     <link rel="stylesheet" href="static/layui/css/layui.css">
 </head>
 <body>

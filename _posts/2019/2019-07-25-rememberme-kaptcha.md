@@ -503,8 +503,8 @@ if(!validateCode.equals(v)){
 
 菜鸟也要成为架构师，一起努力
 
-欢迎关注我微信公众号【鸟不拉屎】
+欢迎关注我微信公众号【鸟不拉诗】
 
 谢谢，一起学习，共同进步，成为优秀的人。
 
-![微信公众号：鸟不拉屎](https://niaobulashi.com/usr/uploads/2019/07/2427016822.png)
+![微信公众号：鸟不拉诗](https://niaobulashi.com/usr/uploads/2019/07/2427016822.png)

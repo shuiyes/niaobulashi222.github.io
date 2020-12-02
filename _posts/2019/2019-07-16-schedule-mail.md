@@ -192,7 +192,7 @@ sendMail.html
 public void sendTemplateMail() {
 	//创建邮件字段
 	Context context = new Context();
-	context.setVariable("siteTitle", "鸟不拉屎");
+	context.setVariable("siteTitle", "鸟不拉诗");
 	context.setVariable("permalink", "https://niaobulashi.com/archives/canteen.html/comment-page-1#comment-1152");
 	context.setVariable("title", "公司食堂伙食看起来还不错的亚子（体重有所回升）");
 	context.setVariable("author", "测试员");
@@ -343,7 +343,7 @@ public class SchedulerTask {
         System.out.println("this is scheduler task runing  "+(count++));
         //创建邮件字段
         Context context = new Context();
-        context.setVariable("siteTitle", "鸟不拉屎");
+        context.setVariable("siteTitle", "鸟不拉诗");
         context.setVariable("permalink", "https://niaobulashi.com/archives/canteen.html/comment-page-1#comment-1152");
         context.setVariable("title", "公司食堂伙食看起来还不错的亚子（体重有所回升）");
         context.setVariable("author", "测试员");
