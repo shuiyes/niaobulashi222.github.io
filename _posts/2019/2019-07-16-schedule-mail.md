@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(十三)：整合定时任务发送邮件
 category: springboot
 tags: [springboot]
-copyright: java
+copyright: Java
 ---
 
 主要玩一下SpringBoot的定时任务和发送邮件的功能。定时发送邮件，这在实际生成环境下主要用户系统性能监控时，当超过设定的阙值，就发送邮件通知预警功能。这里只通过简单的写个定时结合邮件通知进行学习。
@@ -12,7 +12,7 @@ copyright: java
 
 ### 添加maven依赖
 
-```xml
+```
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter</artifactId>
@@ -110,7 +110,7 @@ public interface MailService {
 
 ### MailServiceImpl
 
-```java
+```
 @Component
 public class MailServiceImpl implements MailService {
 
@@ -160,7 +160,7 @@ public class MailServiceImpl implements MailService {
 
 sendMail.html
 
-```html
+```
 <!DOCTYPE html>
 <html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -187,7 +187,7 @@ sendMail.html
 
 ### 测试
 
-```java
+```
 @Test
 public void sendTemplateMail() {
 	//创建邮件字段
@@ -216,7 +216,7 @@ public void sendTemplateMail() {
 
 ### 启动类开启定时任务
 
-```java
+```
 @SpringBootApplication
 @EnableScheduling
 public class ScheduleMailApplication {
@@ -230,7 +230,7 @@ public class ScheduleMailApplication {
 
 ### 创建定时任务
 
-```java
+```
 @Component
 public class SchedulerTask {
 
@@ -322,7 +322,7 @@ cron的表达式是字符串，实际上是由七子表达式，描述个别细�
 
 ### SchedulerTask
 
-```java
+```
 @Component
 public class SchedulerTask {
 

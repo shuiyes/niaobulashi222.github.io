@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(五)：使用Spring Boot结合Thymeleaf模板引擎使用总结
 category: springboot
 tags: [springboot]
-copyright: java
+copyright: Java
 ---
 
 一般来说，常用的模板引擎有JSP、Velocity、Freemarker、Thymeleaf 。
@@ -472,7 +472,7 @@ ${#strings.randomAlphanumeric(count)}
 
 #### 1. pom.xml 添加依赖
 
-```xml
+```
 <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -511,7 +511,7 @@ spring:
 
 #### 3. 创建controller类，编写代码
 
-```java
+```
 @RequestMapping("/me")
 public String kownMe(Map<String,Object> map) {
     List<String> list = new ArrayList<String>();
@@ -534,13 +534,13 @@ public String kownMe(Map<String,Object> map) {
 
 注意导入：
 
-```html
+```
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 ```
 
 否则没提示哦~
 
-```html
+```
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head>

@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(十二)：手摸手教你搭建Shiro安全框架
 category: springboot
 tags: [springboot]
-copyright: java
+copyright: Java
 ---
 
 SpringBoot+Shiro+Mybatis完成的。
@@ -49,7 +49,7 @@ Shiro框架图如下：
 
 ### 1、添加Maven依赖
 
-```xml
+```
 <dependency>
 	<groupId>org.apache.shiro</groupId>
 	<artifactId>shiro-spring</artifactId>
@@ -89,7 +89,7 @@ logging:
 
 启动方法添加mapper扫描，我一般都是在启动方法上面声明，否则需要在每一个mapper上单独声明扫描
 
-```java
+```
 @SpringBootApplication
 @MapperScan("com.niaobulashi.mapper")
 public class ShiroApplication {
@@ -113,7 +113,7 @@ public class ShiroApplication {
 
 #### User.java
 
-```java
+```
 @Data
 public class User implements Serializable {
 
@@ -131,7 +131,7 @@ public class User implements Serializable {
 
 #### Role.java
 
-```java
+```
 @Data
 public class Role implements Serializable {
 
@@ -155,7 +155,7 @@ public class Role implements Serializable {
 
 #### UserMapper.java/UserMapper.xml
 
-```java
+```
 public interface UserMapper {
     /**
      * 根据账户查询用户信息
@@ -166,7 +166,7 @@ public interface UserMapper {
 }
 ```
 
-```xml
+```
 <!--用户表结果集-->
 <sql id="base_column_list">
 	id, account, password, username
@@ -194,7 +194,7 @@ public interface RoleMapper {
 }
 ```
 
-```xml
+```
 <!--角色表字段结果集-->
 <sql id="base_cloum_list">
 	id, role, desc
@@ -213,7 +213,7 @@ public interface RoleMapper {
 
 #### PermissionMapper.java/PermissionMapper.xml
 
-```java
+```
 public interface PermissionMapper {
     /**
      * 根据角色id查询权限
@@ -224,7 +224,7 @@ public interface PermissionMapper {
 }
 ```
 
-```xml
+```
 <!--权限查询结果集-->
 <sql id="base_column_list">
 	id, permission, desc
@@ -253,7 +253,7 @@ public interface PermissionMapper {
 
 #### UserService.java/UserServiceImpl.java
 
-```java
+```
 public interface UserService {
     /**
      * 根据账户查询用户信息
@@ -264,7 +264,7 @@ public interface UserService {
 }
 ```
 
-```java
+```
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
@@ -285,7 +285,7 @@ public class UserServiceImpl implements UserService {
 
 #### RoleService.java/RoleServiceImpl.java
 
-```java
+```
 public interface RoleService {
 
     /**
@@ -297,7 +297,7 @@ public interface RoleService {
 }
 ```
 
-```java
+```
 @Service("roleService")
 public class RoleServiceImpl implements RoleService {
 
@@ -318,7 +318,7 @@ public class RoleServiceImpl implements RoleService {
 
 #### PermissionService.java/PermissionServiceImpl.java
 
-```java
+```
 public interface PermissionService {
 
     /**
@@ -330,7 +330,7 @@ public interface PermissionService {
 }
 ```
 
-```java
+```
 @Service("permissionService")
 public class PermissionServiceImpl implements PermissionService {
 
@@ -355,7 +355,7 @@ public class PermissionServiceImpl implements PermissionService {
 
 #### StatusEnmus.java
 
-```java
+```
 public enum StatusEnums {
 
     SUCCESS(200, "操作成功"),
@@ -387,7 +387,7 @@ public enum StatusEnums {
 
 #### ResponseCode.java
 
-```java
+```
 @Data
 @AllArgsConstructor
 public class ResponseCode<T> implements Serializable {
@@ -445,7 +445,7 @@ public class ResponseCode<T> implements Serializable {
 
 #### ShiroConfig.java
 
-```java
+```
 @Configuration
 public class ShiroConfig {
 
@@ -543,7 +543,7 @@ public class ShiroConfig {
 
 #### AuthRealm.java
 
-```java
+```
 public class AuthRealm extends AuthorizingRealm {
 
     @Resource
@@ -602,7 +602,7 @@ public class AuthRealm extends AuthorizingRealm {
 
 ### 10、Contrller层
 
-```java
+```
 @RestController
 public class LoginController {
 

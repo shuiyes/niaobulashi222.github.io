@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(十五)：Shiro记住我rememberMe、验证码Kaptcha
 category: springboot
 tags: [springboot]
-copyright: java
+copyright: Java
 ---
 
 接着上次学习的《Spring Boot2(十二)：手摸手教你搭建Shiro安全框架》，实现了Shiro的认证和授权。今天继续在这个基础上学习Shiro实现功能记住我rememberMe，以及登录时验证码Kaptcha。
@@ -18,7 +18,7 @@ Kaptcha验证码：是谷歌开源的验证码插件，实现登录的验证码�
 
 ### 修改ShiroConfig
 
-```java
+```
 /**
  * 路径过滤规则
  * @return
@@ -76,7 +76,7 @@ SimleCookie参数中的名称为页面的name标签属性名称。
 
 实现了Cookie对象属性配置，还需要通过`CookieRememberMeManager`进行管理起来。
 
-```java
+```
 /**
  * cookie管理对象
  * rememberMeManager()方法是生成rememberMe管理器，而且要将这个rememberMe管理器设置到securityManager中
@@ -93,7 +93,7 @@ public CookieRememberMeManager rememberMeManager() {
 
 接下来将cookie管理对象设置到`SecurityManager`中：
 
-```java
+```
 @Bean
 public SecurityManager securityManager() {
 	DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
@@ -111,7 +111,7 @@ public SecurityManager securityManager() {
 
 新建MD5加密工具类。
 
-```java
+```
 public class MD5Utils {
 
     private static final String SALT = "niaobulashi";
@@ -147,7 +147,7 @@ main方法中，根据登录名和密码明文，输出最终加密的密文，�
 
 添加Remember Me checkbox
 
-```html
+```
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -199,7 +199,7 @@ main方法中，根据登录名和密码明文，输出最终加密的密文，�
 
 首页index.html
 
-```html
+```
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -219,7 +219,7 @@ main方法中，根据登录名和密码明文，输出最终加密的密文，�
 
 登录接口
 
-```java
+```
 /**
  * 登录操作
  * @param account
@@ -327,7 +327,7 @@ Kaptcha官网：https://code.google.com/archive/p/kaptcha/
 
 具体配置可以参考上面的**kaptche配置详情**，针对不同的常见配置。
 
-```java
+```
 @Configuration
 public class KaptchaConfig {
 
@@ -368,7 +368,7 @@ public class KaptchaConfig {
 
 开头声明的`@Resource(name = "captchaProducer")`，是验证码图片样式配置器启动时配置的Bean：`captchaProducer`。
 
-```java
+```
 @Controller
 @RequestMapping("/captcha")
 public class KaptchaController {
@@ -430,13 +430,13 @@ public class KaptchaController {
 
 因为Shiro配置的拦截器没有放开，需要再`ShiroConfig`中允许匿名访问改请求资源
 
-```java
+```
 map.put("/captcha/captchaImage**", "anon");
 ```
 
 ### 登录页面添加图片验证码
 
-```html
+```
 <div class="login-page">
     <div class="form">
         <input type="text" placeholder="用户名" name="account" required="required"/>
@@ -474,7 +474,7 @@ map.put("/captcha/captchaImage**", "anon");
 
 最后通过比较前端输入的验证码和后台生成的是否一致。
 
-```java
+```
 //1、检验验证码
 if(validateCode == null || validateCode == ""){
 	return ResponseCode.error(StatusEnums.PARAM_NULL);

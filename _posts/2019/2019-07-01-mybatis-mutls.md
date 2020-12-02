@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(四)：使用Spring Boot多数据源实现过程
 category: springboot
 tags: [springboot]
-copyright: java
+copyright: Java
 ---
 
 实际业务场景中，不可能只有一个库，所以就有了分库分表，多数据源的出现。实现了读写分离，主库负责增改删，从库负责查询。这篇文章将实现Spring Boot如何实现多数据源，动态数据源切换，读写分离等操作。
@@ -14,7 +14,7 @@ copyright: java
 
 ### 1、添加maven依赖
 
-```xml
+```
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
@@ -78,7 +78,7 @@ logging:
 
 配置application-test.yml如下
 
-```xml
+```
 spring:
   datasource:
     #主库
@@ -107,7 +107,7 @@ spring:
 
 首先看主库配置的代码：
 
-```java
+```
 @Configuration
 @MapperScan(basePackages = "com.niaobulashi.mapper.master", sqlSessionTemplateRef = "masterSqlSessionTemplate")
 public class DataSourceMasterConfig {
@@ -173,7 +173,7 @@ public class DataSourceMasterConfig {
 
 同时，将配置信息注入到SqlSessionFactoryBean
 
-```java
+```
 /**
  * 将配置信息注入到SqlSessionFactoryBean中
  * @param dataSource    数据库连接信息
@@ -199,7 +199,7 @@ public SqlSessionFactory slaveSqlSessionFactory(@Qualifier("slaveDataSource") Da
 
 代码如下
 
-```java
+```
 @Configuration
 @MapperScan(basePackages = "com.niaobulashi.mapper.slave", sqlSessionTemplateRef = "slaveSqlSessionTemplate")
 public class DataSourceSlaveConfig {
@@ -259,7 +259,7 @@ public class DataSourceSlaveConfig {
 
 在网上还看到这样一种配置，单独通过@ConfigurationProperties注解配置Mybatis的配置信息如下
 
-```java
+```
 /**
  * 试application.yml中的mybatis.configuration配置生效，如果不主动配置，由于@Order配置顺序不同，讲导致配置不能及时生效
  * 使配置信息加载到类中，再注入到SqlSessionFactoryBean
@@ -276,7 +276,7 @@ public org.apache.ibatis.session.Configuration configuration() {
 
 导致只有主库可以执行Mybatis的配置，从库无效。
 
-```java
+```
 @Bean(name = "masterSqlSessionFactory")
     @Primary
     public SqlSessionFactory masterSqlSessionFactory(@Qualifier("masterDataSource") DataSource dataSource, org.apache.ibatis.session.Configuration configuration) throws Exception {
@@ -299,7 +299,7 @@ public org.apache.ibatis.session.Configuration configuration() {
 
 其中SysUserMasterDao代码
 
-```java
+```
 public interface SysUserMasterDao {
 	
 	/**
@@ -326,7 +326,7 @@ public interface SysUserMasterDao {
 
 SysCodeMasterDao.xml
 
-```xml
+```
 <mapper namespace="com.niaobulashi.mapper.master.SysUserMasterDao">
 
     <!--查询所有用户信息-->
@@ -370,7 +370,7 @@ SysCodeMasterDao.xml
 
 8、Controller层测试
 
-```java
+```
 @RestController
 public class SysUserController {
 

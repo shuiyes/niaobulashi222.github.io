@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(三)：使用Spring Boot2集成Redis缓存
 category: springboot
 tags: [springboot]
-copyright: java
+copyright: Java
 ---
 
 前面一节总结了[SpringBoot实现Mybatis的缓存机制](<https://niaobulashi.github.io/springboot/2019/06/28/mybatis-2levelcache.html>)，但是实际项目中很少用到Mybatis的二级缓存机制，反而用到比较多的是第三方缓存[Redis](<https://redis.io/>)。
@@ -22,7 +22,7 @@ copyright: java
 
 ### 添加redis依赖
 
-```xml
+```
 <dependency>
 	<groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-data-redis</artifactId>
@@ -31,7 +31,7 @@ copyright: java
 
 ### application.yml配置
 
-```xml
+```
 spring:
   redis:
     host: 127.0.0.1
@@ -48,7 +48,7 @@ spring:
 
 ### RedisConfig配置类
 
-```java
+```
 @Autowired
 private RedisConnectionFactory factory;
 
@@ -71,7 +71,7 @@ public RedisTemplate<String, Object> redisTemplate() {
 
 ### RedisUtils工具类
 
-```java
+```
 @Autowired
 private RedisTemplate redisTemplate;
 // 简单的K-V操作
@@ -97,7 +97,7 @@ private ZSetOperations<String, Object> zSetOperations;
 
 ### 实体类SysCodeEntity
 
-```java
+```
 @Data
 public class SysCodeEntity implements Serializable {
 
@@ -146,7 +146,7 @@ public List<SysCodeEntity> queryCodeAll() {
 
 ### Controller层实现
 
-```java
+```
 /**
  * 查询所有数字字典
  * @return

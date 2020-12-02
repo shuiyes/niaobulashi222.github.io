@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(二)：使用Spring Boot2集成Mybatis缓存机制
 category: springboot
 tags: [springboot]
-copyright: java
+copyright: Java
 ---
 
 学习SpringBoot集成Mybatis的第二章，了解到Mybatis自带的缓存机制，在部署的时候踩过了一些坑。在此记录和分享一下Mybatis的缓存作用。
@@ -24,7 +24,7 @@ MyBatis有一级缓存和二级缓存。记录可以看下这篇博文：
 
 具体可以看这段代码：
 
-```java
+```
 @Test
 public void testLocalCacheScope() throws Exception {
         SqlSession sqlSession1 = factory.openSession(true); 
@@ -71,7 +71,7 @@ Mybatis的二级缓存是指mapper映射文件。二级缓存的作用域是同�
 
 ### pom.xml新增mybatis缓存包caches
 
-```xml
+```
 <dependency>
 	<groupId>org.mybatis.caches</groupId>
 	<artifactId>mybatis-ehcache</artifactId>
@@ -81,7 +81,7 @@ Mybatis的二级缓存是指mapper映射文件。二级缓存的作用域是同�
 
 ### SysUserDao.xml添加开启Mybatis二级缓存
 
-```xml
+```
 <cache />
 ```
 
@@ -96,7 +96,7 @@ Mybatis的二级缓存是指mapper映射文件。二级缓存的作用域是同�
 
   也可以自定义二级缓存的属性，例如：
 
-```xml
+```
 <cache
   eviction="FIFO"
   flushInterval="60000"
@@ -125,7 +125,7 @@ Mybatis的二级缓存是指mapper映射文件。二级缓存的作用域是同�
 
 编写Controller接口
 
-```java
+```
 /**
  * 查询所有用户信息
  * @return

@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 聊聊MyBatis缓存机制
-category: mybatis
-tags: [mybatis]
-copyright: java
+category: Java
+tags: [Java]
+copyright: Java
 ---
 
 MyBatis是常见的Java数据库访问层框架。在日常工作中，开发人员多数情况下是使用MyBatis的默认缓存配置，但是MyBatis缓存机制有一些不足之处，在使用中容易引起脏数据，形成一些潜在的隐患。个人在业务开发中也处理过一些由于MyBatis缓存引发的开发问题，带着个人的兴趣，希望从应用及源码的角度为读者梳理MyBatis缓存机制。官方说明：`MyBatis Spring-Boot-Starter will help you use MyBatis with Spring Boot`  
@@ -39,7 +39,7 @@ MyBatis是常见的Java数据库访问层框架。在日常工作中，开发人
 
 我们来看看如何使用MyBatis一级缓存。开发者只需在MyBatis的配置文件中，添加如下语句，就可以使用一级缓存。共有两个选项，`SESSION`或者`STATEMENT`，默认是`SESSION`级别，即在一个MyBatis会话中执行的所有语句，都会共享这一个缓存。一种是`STATEMENT`级别，可以理解为缓存只对当前执行的这一个`Statement`有效。
 
-```xml
+```
 <setting name="localCacheScope" value="SESSION"/>
 ```
 
@@ -64,7 +64,7 @@ CREATE TABLE `student` (
 
 开启一级缓存，范围为会话级别，调用三次`getStudentById`，代码如下所示：
 
-```java
+```
 public void getStudentById() throws Exception {
         SqlSession sqlSession = factory.openSession(true); // 自动提交事务
         StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
@@ -84,7 +84,7 @@ public void getStudentById() throws Exception {
 
 增加了对数据库的修改操作，验证在一次数据库会话中，如果对数据库发生了修改操作，一级缓存是否会失效。
 
-```java
+```
 @Test
 public void addStudent() throws Exception {
         SqlSession sqlSession = factory.openSession(true); // 自动提交事务
@@ -106,7 +106,7 @@ public void addStudent() throws Exception {
 
 开启两个`SqlSession`，在`sqlSession1`中查询数据，使一级缓存生效，在`sqlSession2`中更新数据库，验证一级缓存只在数据库会话内部共享。
 
-```java
+```
 @Test
 public void testLocalCacheScope() throws Exception {
         SqlSession sqlSession1 = factory.openSession(true); 
@@ -157,7 +157,7 @@ public void testLocalCacheScope() throws Exception {
 
 **BaseExecutor**： `BaseExecutor`是一个实现了Executor接口的抽象类，定义若干抽象方法，在执行的时候，把具体的操作委托给子类进行执行。
 
-```java
+```
 protected abstract int doUpdate(MappedStatement ms, Object parameter) throws SQLException;
 protected abstract List<BatchResult> doFlushStatements(boolean isRollback) throws SQLException;
 protected abstract <E> List<E> doQuery(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, BoundSql boundSql) throws SQLException;
@@ -166,7 +166,7 @@ protected abstract <E> Cursor<E> doQueryCursor(MappedStatement ms, Object parame
 
 在一级缓存的介绍中提到对`Local Cache`的查询和写入是在`Executor`内部完成的。在阅读`BaseExecutor`的代码后发现`Local Cache`是`BaseExecutor`内部的一个成员变量，如下代码所示。
 
-```java
+```
 public abstract class BaseExecutor implements Executor {
 protected ConcurrentLinkedQueue<DeferredLoad> deferredLoads;
 protected PerpetualCache localCache;
@@ -182,7 +182,7 @@ protected PerpetualCache localCache;
 
 `BaseExecutor`成员变量之一的`PerpetualCache`，是对Cache接口最基本的实现，其实现非常简单，内部持有HashMap，对一级缓存的操作实则是对HashMap的操作。如下代码所示：
 
-```java
+```
 public class PerpetualCache implements Cache {
   private String id;
   private Map<Object, Object> cache = new HashMap<Object, Object>();
@@ -192,7 +192,7 @@ public class PerpetualCache implements Cache {
 
 为执行和数据库的交互，首先需要初始化`SqlSession`，通过`DefaultSqlSessionFactory`开启`SqlSession`：
 
-```java
+```
 private SqlSession openSessionFromDataSource(ExecutorType execType, TransactionIsolationLevel level, boolean autoCommit) {
     ............
     final Executor executor = configuration.newExecutor(tx, execType);     
@@ -202,7 +202,7 @@ private SqlSession openSessionFromDataSource(ExecutorType execType, TransactionI
 
 在初始化`SqlSesion`时，会使用`Configuration`类创建一个全新的`Executor`，作为`DefaultSqlSession`构造函数的参数，创建Executor代码如下所示：
 
-```java
+```
 public Executor newExecutor(Transaction transaction, ExecutorType executorType) {
     executorType = executorType == null ? defaultExecutorType : executorType;
     executorType = executorType == null ? ExecutorType.SIMPLE : executorType;
@@ -225,7 +225,7 @@ public Executor newExecutor(Transaction transaction, ExecutorType executorType) 
 
 `SqlSession`创建完毕后，根据Statment的不同类型，会进入`SqlSession`的不同方法中，如果是`Select`语句的话，最后会执行到`SqlSession`的`selectList`，代码如下所示：
 
-```java
+```
 @Override
 public <E> List<E> selectList(String statement, Object parameter, RowBounds rowBounds) {
       MappedStatement ms = configuration.getMappedStatement(statement);
@@ -235,7 +235,7 @@ public <E> List<E> selectList(String statement, Object parameter, RowBounds rowB
 
 `SqlSession`把具体的查询职责委托给了Executor。如果只开启了一级缓存的话，首先会进入`BaseExecutor`的`query`方法。代码如下所示：
 
-```java
+```
 @Override
 public <E> List<E> query(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler) throws SQLException {
     BoundSql boundSql = ms.getBoundSql(parameter);
@@ -246,7 +246,7 @@ public <E> List<E> query(MappedStatement ms, Object parameter, RowBounds rowBoun
 
 在上述代码中，会先根据传入的参数生成CacheKey，进入该方法查看CacheKey是如何生成的，代码如下所示：
 
-```java
+```
 CacheKey cacheKey = new CacheKey();
 cacheKey.update(ms.getId());
 cacheKey.update(rowBounds.getOffset());
@@ -258,7 +258,7 @@ cacheKey.update(value);
 
 在上述的代码中，将`MappedStatement`的Id、SQL的offset、SQL的limit、SQL本身以及SQL中的参数传入了CacheKey这个类，最终构成CacheKey。以下是这个类的内部结构：
 
-```java
+```
 private static final int DEFAULT_MULTIPLYER = 37;
 private static final int DEFAULT_HASHCODE = 17;
 
@@ -278,7 +278,7 @@ public CacheKey() {
 
 首先是成员变量和构造函数，有一个初始的`hachcode`和乘数，同时维护了一个内部的`updatelist`。在`CacheKey`的`update`方法中，会进行一个`hashcode`和`checksum`的计算，同时把传入的参数添加进`updatelist`中。如下代码所示：
 
-```java
+```
 public void update(Object object) {
     int baseHashCode = object == null ? 1 : ArrayUtil.hashCode(object); 
     count++;
@@ -292,7 +292,7 @@ public void update(Object object) {
 
 同时重写了`CacheKey`的`equals`方法，代码如下所示：
 
-```java
+```
 @Override
 public boolean equals(Object object) {
     .............
@@ -315,7 +315,7 @@ public boolean equals(Object object) {
 
 BaseExecutor的query方法继续往下走，代码如下所示：
 
-```java
+```
 list = resultHandler == null ? (List<E>) localCache.getObject(key) : null;
 if (list != null) {
     // 这个主要是处理存储过程用的。
@@ -329,7 +329,7 @@ if (list != null) {
 
 在`query`方法执行的最后，会判断一级缓存级别是否是`STATEMENT`级别，如果是的话，就清空缓存，这也就是`STATEMENT`级别的一级缓存无法共享`localCache`的原因。代码如下所示：
 
-```java
+```
 if (configuration.getLocalCacheScope() == LocalCacheScope.STATEMENT) {
         clearLocalCache();
 }
@@ -339,7 +339,7 @@ if (configuration.getLocalCacheScope() == LocalCacheScope.STATEMENT) {
 
 `SqlSession`的`insert`方法和`delete`方法，都会统一走`update`的流程，代码如下所示：
 
-```java
+```
 @Override
 public int insert(String statement, Object parameter) {
     return update(statement, parameter);
@@ -352,7 +352,7 @@ public int insert(String statement, Object parameter) {
 
 `update`方法也是委托给了`Executor`执行。`BaseExecutor`的执行方法如下所示：
 
-```java
+```
 @Override
 public int update(MappedStatement ms, Object parameter) throws SQLException {
     ErrorContext.instance().resource(ms.getResource()).activity("executing an update").object(ms.getId());
@@ -392,7 +392,7 @@ public int update(MappedStatement ms, Object parameter) throws SQLException {
 
 1. 在MyBatis的配置文件中开启二级缓存。
 
-```xml
+```
 <setting name="cacheEnabled" value="true"/>
 ```
 
@@ -400,7 +400,7 @@ public int update(MappedStatement ms, Object parameter) throws SQLException {
 
 cache标签用于声明这个namespace使用二级缓存，并且可以自定义配置。
 
-```xml
+```
 <cache/>   
 ```
 
@@ -413,7 +413,7 @@ cache标签用于声明这个namespace使用二级缓存，并且可以自定义
 
 `cache-ref`代表引用别的命名空间的Cache配置，两个命名空间的操作使用的是同一个Cache。
 
-```xml
+```
 <cache-ref namespace="mapper.StudentMapper"/>
 ```
 
@@ -427,7 +427,7 @@ cache标签用于声明这个namespace使用二级缓存，并且可以自定义
 
 测试二级缓存效果，不提交事务，`sqlSession1`查询完数据后，`sqlSession2`相同的查询是否会从缓存中获取数据。
 
-```java
+```
 @Test
 public void testCacheWithoutCommitOrClose() throws Exception {
         SqlSession sqlSession1 = factory.openSession(true); 
@@ -451,7 +451,7 @@ public void testCacheWithoutCommitOrClose() throws Exception {
 
 测试二级缓存效果，当提交事务时，`sqlSession1`查询完数据后，`sqlSession2`相同的查询是否会从缓存中获取数据。
 
-```java
+```
 @Test
 public void testCacheWithCommitOrClose() throws Exception {
         SqlSession sqlSession1 = factory.openSession(true); 
@@ -474,7 +474,7 @@ public void testCacheWithCommitOrClose() throws Exception {
 
 测试`update`操作是否会刷新该`namespace`下的二级缓存。
 
-```java
+```
 @Test
 public void testCacheWithUpdate() throws Exception {
         SqlSession sqlSession1 = factory.openSession(true); 
@@ -505,7 +505,7 @@ public void testCacheWithUpdate() throws Exception {
 
 通常我们会为每个单表创建单独的映射文件，由于MyBatis的二级缓存是基于`namespace`的，多表查询语句所在的`namspace`无法感应到其他`namespace`中的语句对多表查询中涉及的表进行的修改，引发脏数据问题。
 
-```java
+```
 @Test
 public void testCacheWithDiffererntNamespace() throws Exception {
         SqlSession sqlSession1 = factory.openSession(true); 
@@ -556,7 +556,7 @@ MyBatis二级缓存的工作流程和前文提到的一级缓存类似，只是�
 
 `CachingExecutor`的`query`方法，首先会从`MappedStatement`中获得在配置初始化时赋予的Cache。
 
-```java
+```
 Cache cache = ms.getCache();
 ```
 
@@ -578,13 +578,13 @@ Cache cache = ms.getCache();
 
 然后是判断是否需要刷新缓存，代码如下所示：
 
-```java
+```
 flushCacheIfRequired(ms);
 ```
 
 在默认的设置中`SELECT`语句不会刷新缓存，`insert/update/delte`会刷新缓存。进入该方法。代码如下所示：
 
-```java
+```
 private void flushCacheIfRequired(MappedStatement ms) {
     Cache cache = ms.getCache();
     if (cache != null && ms.isFlushCacheRequired()) {      
@@ -597,7 +597,7 @@ MyBatis的`CachingExecutor`持有了`TransactionalCacheManager`，即上述代�
 
 `TransactionalCacheManager`中持有了一个Map，代码如下所示：
 
-```java
+```
 private Map<Cache, TransactionalCache> transactionalCaches = new HashMap<Cache, TransactionalCache>();
 ```
 
@@ -607,7 +607,7 @@ private Map<Cache, TransactionalCache> transactionalCaches = new HashMap<Cache, 
 
 在`TransactionalCache`的clear，有以下两句。清空了需要在提交时加入缓存的列表，同时设定提交时清空缓存，代码如下所示：
 
-```java
+```
 @Override
 public void clear() {
 	clearOnCommit = true;
@@ -617,20 +617,20 @@ public void clear() {
 
 `CachingExecutor`继续往下走，`ensureNoOutParams`主要是用来处理存储过程的，暂时不用考虑。
 
-```java
+```
 if (ms.isUseCache() && resultHandler == null) {
 	ensureNoOutParams(ms, parameterObject, boundSql);
 ```
 
 之后会尝试从tcm中获取缓存的列表。
 
-```java
+```
 List<E> list = (List<E>) tcm.getObject(cache, key);
 ```
 
 在`getObject`方法中，会把获取值的职责一路传递，最终到`PerpetualCache`。如果没有查到，会把key加入Miss集合，这个主要是为了统计命中率。
 
-```java
+```
 Object object = delegate.getObject(key);
 if (object == null) {
 	entriesMissedInCache.add(key);
@@ -639,7 +639,7 @@ if (object == null) {
 
 `CachingExecutor`继续往下走，如果查询到数据，则调用`tcm.putObject`方法，往缓存中放入值。
 
-```java
+```
 if (list == null) {
 	list = delegate.<E> query(ms, parameterObject, rowBounds, resultHandler, key, boundSql);
 	tcm.putObject(cache, key, list); // issue #578 and #116
@@ -648,7 +648,7 @@ if (list == null) {
 
 tcm的`put`方法也不是直接操作缓存，只是在把这次的数据和key放入待提交的Map中。
 
-```java
+```
 @Override
 public void putObject(Object key, Object object) {
     entriesToAddOnCommit.put(key, object);
@@ -657,7 +657,7 @@ public void putObject(Object key, Object object) {
 
 从以上的代码分析中，我们可以明白，如果不调用`commit`方法的话，由于`TranscationalCache`的作用，并不会对二级缓存造成直接的影响。因此我们看看`Sqlsession`的`commit`方法中做了什么。代码如下所示：
 
-```java
+```
 @Override
 public void commit(boolean force) {
     try {
@@ -666,7 +666,7 @@ public void commit(boolean force) {
 
 因为我们使用了CachingExecutor，首先会进入CachingExecutor实现的commit方法。
 
-```java
+```
 @Override
 public void commit(boolean required) throws SQLException {
     delegate.commit(required);
@@ -676,7 +676,7 @@ public void commit(boolean required) throws SQLException {
 
 会把具体commit的职责委托给包装的`Executor`。主要是看下`tcm.commit()`，tcm最终又会调用到`TrancationalCache`。
 
-```java
+```
 public void commit() {
     if (clearOnCommit) {
       delegate.clear();
@@ -688,7 +688,7 @@ public void commit() {
 
 看到这里的`clearOnCommit`就想起刚才`TrancationalCache`的`clear`方法设置的标志位，真正的清理Cache是放到这里来进行的。具体清理的职责委托给了包装的Cache类。之后进入`flushPendingEntries`方法。代码如下所示：
 
-```java
+```
 private void flushPendingEntries() {
     for (Map.Entry<Object, Object> entry : entriesToAddOnCommit.entrySet()) {
       delegate.putObject(entry.getKey(), entry.getValue());
@@ -701,7 +701,7 @@ private void flushPendingEntries() {
 
 后续的查询操作会重复执行这套流程。如果是`insert|update|delete`的话，会统一进入`CachingExecutor`的`update`方法，其中调用了这个函数，代码如下所示：
 
-```java
+```
 private void flushCacheIfRequired(MappedStatement ms) 
 ```
 

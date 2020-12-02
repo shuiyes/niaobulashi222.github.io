@@ -48,13 +48,13 @@ Assuming you want to use the Grow effect:
 
 Example element before applying Hover.css effect:
 
-```html
+```
 <a href="#">Add to Basket</a>
 ```
 
 Example element after applying Hover.css effect:
 
-```html
+```
 <a href="#" class="hvr-grow">Add to Basket</a>
 ```
 
@@ -67,7 +67,7 @@ If you plan on using many Hover.css effects, you may like to reference the entir
 1. Download `hover-min.css`
 2. Add `hover-min.css` to your websites files, in a directory named `css` for example
 3. Reference `hover-min.css` in `<head>` of the HTML page you'd like to add Hover.css effects to:
-```html
+```
 <head>
 	<link href="css/hover-min.css" rel="stylesheet">
 </head>
@@ -80,13 +80,13 @@ Alternatively you can add a reference into an existing stylesheet like so (this 
 
 Example element before applying Hover.css effect:
 
-```html
+```
 <a href="#" class="button">Add to Basket</a>
 ```
 
 Example element after applying Hover.css effect:
 
-```html
+```
 <a href="#" class="button hvr-grow">Add to Basket</a>
 ```
 
@@ -107,7 +107,7 @@ For more information about Transformable elements, see the [CSS Transforms Modul
 
 Hover.css uses [FontAwesome](https://fortawesome.github.io/Font-Awesome/) for its icon effects. For these effects to work, a reference to the FontAwesome stylesheet must be added by placing the following in the `<head></head>` of your web page:
 
-```html
+```
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
 ```
 

@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(七)：过滤器拦截器的使用
 category: springboot
 tags: [springboot]
-copyright: java
+copyright: Java
 
 
 ---
@@ -33,7 +33,7 @@ FilterRegistrationBean，ServletListenerRegistrationBean，DelegatingFilterProxy
 
 #### 1、添加maven依赖
 
-```xml
+```
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter</artifactId>
@@ -59,7 +59,7 @@ FilterRegistrationBean，ServletListenerRegistrationBean，DelegatingFilterProxy
 
 #### 2、添加拦截器
 
-```java
+```
 @Configuration
 public class WebConfig {
     @Bean
@@ -110,7 +110,7 @@ public class WebConfig {
 
 #### 3、controller层
 
-```java
+```
 @RestController
 public class HelloController {
 
@@ -183,7 +183,7 @@ afterCompletion是视图渲染完成后执行
 
 配置的主要有两项：一个是制定拦截器，第二个是指定拦截的URL
 
-```java
+```
 @Slf4j
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {
@@ -230,7 +230,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
 
 #### 3、controller层
 
-```java
+```
 @RestController
 public class HelloController {
 

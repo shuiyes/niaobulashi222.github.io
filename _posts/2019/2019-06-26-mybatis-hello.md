@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(一)：使用Spring Boot2集成Mybatis基础搭建
 category: springboot
 tags: [springboot]
-copyright: java
+copyright: Java
 ---
 
 Mybatis 初期使用比较麻烦，需要各种配置文件、实体类、Dao 层映射关联、还有一大推其它配置。`mybatis-spring-boot-starter` 就是 Spring Boot+ Mybatis 可以完全注解不用配置文件，也可以简单配置轻松上手。
@@ -118,7 +118,7 @@ public class MybatisApplication {
 
 ### 3、添加 User 的实例
 
-```java
+```
 @Data
 public class SysUserEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -188,7 +188,7 @@ public interface SysUserDao {
 
 `SysUserService`接口类：
 
-```java
+```
 public interface SysUserService {
 	/**
 	 * 查询用户的所有菜单ID
@@ -199,7 +199,7 @@ public interface SysUserService {
 
 `SysUserServiceImpl`实现类：
 
-```java
+```
 @Service("sysUserService")
 public class SysUserServiceImpl  implements SysUserService {
 	@Resource
@@ -221,7 +221,7 @@ public class SysUserServiceImpl  implements SysUserService {
 
 经过上面5个步骤就可以完成基本的接口开发，省去了Controller层的开发
 
-```java
+```
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class MabatisTest {

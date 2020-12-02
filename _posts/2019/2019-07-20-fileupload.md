@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(十四)：单文件上传/下载，文件批量上传
 category: springboot
 tags: [springboot]
-copyright: java
+copyright: Java
 ---
 
 文件上传和下载在项目中经常用到，这里主要学习SpringBoot完成单个文件上传/下载，批量文件上传的场景应用。结合mysql数据库、jpa数据层操作、thymeleaf页面模板。
@@ -12,7 +12,7 @@ copyright: java
 
 ### 添加maven依赖
 
-```xml
+```
 <!--springboot核心-->
 <dependency>
 	<groupId>org.springframework.boot</groupId>
@@ -156,7 +156,7 @@ CREATE TABLE `sys_file_info` (
 
 ### 页面file.html
 
-```html
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -187,7 +187,7 @@ CREATE TABLE `sys_file_info` (
 
 ### 统一返回ResponseCode
 
-```java
+```
 @Data
 @AllArgsConstructor
 public class ResponseCode extends HashMap<String, Object> {
@@ -365,7 +365,7 @@ public class ResponseCode extends HashMap<String, Object> {
 
 ### model实体类SysFileInfo
 
-```java
+```
 @Data
 @Entity
 @Table(name = "sys_file_info")
@@ -388,7 +388,7 @@ public class SysFileInfo implements Serializable {
 
 读取配置文件信息
 
-```java
+```
 @Data
 @Component
 public class GlobalProperties {
@@ -406,7 +406,7 @@ public class GlobalProperties {
 
 ### dao层
 
-```java
+```
 public interface SysFileInfoDao extends JpaRepository<SysFileInfo, Integer> {
 
 }
@@ -449,7 +449,7 @@ public class FileController {
 
 #### 单文件上传
 
-```java
+```
 /**
  * 单文件上传
  * @param file
@@ -526,7 +526,7 @@ private ResponseCode upload(@RequestParam("file") MultipartFile file) throws Exc
 
 正常情况下应该是列表，单选或者多选后下载文件的。
 
-```java
+```
 /**
  * 下载
  * @param fileId
@@ -596,7 +596,7 @@ public ResponseCode downloadFile(@RequestParam("fileId") Integer fileId, HttpSer
 
 #### 批量文件上传
 
-```java
+```
 /**
  * 批量文件上传
  * @param files

@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot2(十一)：Mybatis使用总结（自增长、多条件、批量操作、多表查询等等）
 category: springboot
 tags: [springboot]
-copyright: java
+copyright: Java
 ---
 
 上次用Mybatis还是2017年做项目的时候，已经很久过去了。中途再没有用过Mybatis。导致现在学习SpringBoot过程中遇到一些Mybatis的问题，以此做出总结（XML极简模式）。当然只是实用方面的总结，具体就不深究♂了。**这里只总结怎么用！！！**
@@ -121,7 +121,7 @@ ResultSet.getObject（）方法使用MySQL和Java类型之间的类型转换，�
 
 > 其一：定义字段别名，使之与实体类属性名一致。
 
-```xml
+```
 <!-- 查询用户信息列表1 -->
 <select id="queryUserList1" resultType="com.niaobulashi.entity.SysUser">
    SELECT
@@ -135,7 +135,7 @@ ResultSet.getObject（）方法使用MySQL和Java类型之间的类型转换，�
 
 > 其二：通过resultMap映射字段名和实体类属性名保持一致
 
-```xml
+```
 <resultMap id="sysUserInfoMap" type="com.niaobulashi.entity.SysUser">
 	<!-- 用户Id属性来映射主键字段 userId-->
 	<id property="id" column="userId"/>
@@ -165,7 +165,7 @@ ResultSet.getObject（）方法使用MySQL和Java类型之间的类型转换，�
 
 思路：`useGeneratedKeys="true" keyProperty="id"`
 
-```xml
+```
 <!-- 获取自动生成的(主)键值 -->
 <insert id="insertSysTest" parameterType="com.niaobulashi.model.SysTest"
 		useGeneratedKeys="true" keyProperty="id">
@@ -175,7 +175,7 @@ ResultSet.getObject（）方法使用MySQL和Java类型之间的类型转换，�
 
 获取自增长主键
 
-```java
+```
 /**
  * 获取自增长主键ID
  * @param sysTest
@@ -204,7 +204,7 @@ private void addSysTest(@RequestBody SysTest sysTest) throws Exception {
 
 推荐使用：**`CONCAT('%',#{value},'%')`**
 
-```java
+```
 <!--用户Vo-->
 <sql id="selectSysUserVo">
 	SELECT
@@ -226,11 +226,11 @@ private void addSysTest(@RequestBody SysTest sysTest) throws Exception {
 
 1、使用@Param
 
-```java
+```
 List<SysUser> queryUserByNameAndEmail(@Param("userName") String userName, @Param("email") String email);
 ```
 
-```xml
+```
 <!--使用用户名和邮箱查询用户信息-->
 <select id="queryUserByNameAndEmail" resultMap="sysUserInfoMap">
 	<include refid="selectSysUserVo"/>
@@ -253,7 +253,7 @@ List<SysUser> queryUserByNameAndEmail(@Param("userName") String userName, @Param
 List<SysUser> queryUserByUser(SysUser sysUser);
 ```
 
-```xml
+```
 <select id="queryUserByUser" parameterType="com.niaobulashi.model.SysUser" resultMap="sysUserInfoMap">
 	<include refid="selectSysUserVo"/>
 	<where>
@@ -287,7 +287,7 @@ List<SysUser> queryUserByUser(SysUser sysUser);
 
 xml部分
 
-```xml
+```
 <delete id="deleteSysTestByIds" parameterType="String">
 	delete from sys_test where id in
 	<foreach collection="array" item="id" open="(" separator="," close=")">
@@ -307,13 +307,13 @@ xml部分
 
 dao部分
 
-```java
+```
 int deleteSysTestByIds(String[] ids);
 ```
 
 service层
 
-```java
+```
 @Transactional(rollbackFor = Exception.class)
 @Override
 public int deleteDictDataByIds(String ids) throws Exception{
@@ -328,7 +328,7 @@ public int deleteDictDataByIds(String ids) throws Exception{
 
 controller
 
-```java
+```
 @RequestMapping(value = "/deleteIds", method = RequestMethod.POST)
 public int deleteIds(String ids) throws Exception {
 	try {
@@ -379,7 +379,7 @@ ids : 1,2
 
 #### 1、用户表实体类
 
-```java
+```
 @Data
 public class SysUser implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -411,7 +411,7 @@ public class SysUser implements Serializable {
 
 #### 2、部门表实体类
 
-```java
+```
 @Data
 public class SysDept implements Serializable {
     /** 部门ID */
@@ -423,7 +423,7 @@ public class SysDept implements Serializable {
 
 #### 3、角色表实体类
 
-```java
+```
 @Data
 public class SysRole implements Serializable {
     /** 角色ID */
@@ -435,13 +435,13 @@ public class SysRole implements Serializable {
 
 #### 4、Mapper、Service部分（略）
 
-```java
+```
 List<SysUser> queryUserRoleDept(SysUser user);
 ```
 
 #### 5、XML部分
 
-```xml
+```
 <!--查看用户部门和角色信息-->
 <select id="queryUserRoleDept" parameterType="com.niaobulashi.model.SysUser" resultMap="UserResult">
 	select u.user_id, u.username, u.dept_id, d.dept_name, r.role_id, r.role_name
@@ -458,7 +458,7 @@ List<SysUser> queryUserRoleDept(SysUser user);
 
 UserResult部分
 
-```xml
+```
 <!--用户表-->
 <resultMap type="com.niaobulashi.model.SysUser" id="UserResult">
 	<id property="userId" column="user_id"/>
@@ -489,7 +489,7 @@ UserResult部分
 
 #### 6、Controller部分
 
-```java
+```
 @RequestMapping(value = "/queryUserRoleDept", method = RequestMethod.POST)
 private List<SysUser> queryUserRoleDept(@RequestBody SysUser sysUser) {
 	List<SysUser> userList = sysUserService.queryUserRoleDept(sysUser);
@@ -522,7 +522,7 @@ pagehelper:
 
 controller
 
-```java
+```
 @RequestMapping(value = "/queryUserByPage", method = RequestMethod.GET)
 private PageInfo queryUserByPage(Integer currentPage, Integer pageSize) {
 	PageHelper.startPage(currentPage, pageSize);
