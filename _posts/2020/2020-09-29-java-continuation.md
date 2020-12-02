@@ -33,7 +33,7 @@ copyright: java
 
 通过以上分析，可以使用二维数组来校验是否为连续的区间
 
-``` Java
+```
 package javatest;
  
 import org.apache.commons.lang.StringUtils;
