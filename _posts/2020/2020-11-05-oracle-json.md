@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 解析json报文，获取key的value
-category: Java
-tags: [Java]
+category: java
+tags: [java]
 copyright: java
 
 ---

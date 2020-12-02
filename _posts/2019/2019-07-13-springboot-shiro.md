@@ -60,7 +60,7 @@ Shiro框架图如下：
 
 `application.yml`
 
-```yaml
+``` yaml
 # 服务器端口
 server:
   port: 8081

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 5种常见Bean映射工具的性能比对
-category: Java
-tags: [Java]
+category: java
+tags: [java]
 copyright: java
 
 ---

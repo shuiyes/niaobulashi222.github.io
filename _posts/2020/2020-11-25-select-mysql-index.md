@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Mysql索引类型如何选择？
-category: Java
-tags: [Java]
+category: java
+tags: [java]
 copyright: java
 
 ---

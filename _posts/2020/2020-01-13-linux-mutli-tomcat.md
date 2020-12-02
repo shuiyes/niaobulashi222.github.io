@@ -1,8 +1,8 @@
 ---
 layout: post
 title: linux 同时启动多个tomcat
-category: Java
-tags: [Java]
+category: java
+tags: [java]
 copyright: java
 
 ---

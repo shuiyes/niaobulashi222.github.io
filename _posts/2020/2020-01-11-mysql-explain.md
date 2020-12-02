@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Mysql的Explain使用及索引总结
-category: Java
-tags: [Java]
+category: java
+tags: [java]
 copyright: java
 
 ---

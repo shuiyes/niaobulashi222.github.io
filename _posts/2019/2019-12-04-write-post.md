@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 关于Java的File.separator
-category: life
-tags: [Java]
+category: java
+tags: [java]
 copyright: java
 
 ---

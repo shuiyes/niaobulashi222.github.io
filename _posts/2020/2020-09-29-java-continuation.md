@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Java 校验是否为连续的区间
-category: Java
-tags: [Java]
+category: java
+tags: [java]
 copyright: java
 
 ---

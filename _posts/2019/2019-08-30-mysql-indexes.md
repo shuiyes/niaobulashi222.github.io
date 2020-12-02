@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 性能调优-Mysql索引数据结构详解与索引优化
-category: Java
-tags: [mysql]
+category: java
+tags: [java]
 copyright: java
 ---
 

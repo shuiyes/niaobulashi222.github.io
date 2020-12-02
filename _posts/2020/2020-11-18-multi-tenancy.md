@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 什么是多租户
-category: Java
-tags: [Java]
+category: java
+tags: [java]
 copyright: java
 
 ---

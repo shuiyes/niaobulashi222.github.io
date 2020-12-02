@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 如何理解多租户架构？
-category: Java
-tags: [Java]
+category: java
+tags: [java]
 copyright: java
 
 ---
