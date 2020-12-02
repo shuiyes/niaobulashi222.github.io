@@ -2,7 +2,7 @@
 layout: post
 title: Oracle常用SQL语句工作总结（持续更新中）
 category: java
-tags: [java >
+tags: [java]
 copyright: java
 ---
 
