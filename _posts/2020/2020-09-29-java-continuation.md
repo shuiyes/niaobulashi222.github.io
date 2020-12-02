@@ -49,7 +49,7 @@ import java.util.List;
 public class Test {
     public static void main(String[] args) {
         // 创建一个二维数组
-        String a[][] = {{"0", "800000"}, {"800000", "1600000.2"}, {"1600000.2", "-1"}};
+        //String a[][] = {{"0", "800000"}, {"800000", "1600000.2"}, {"1600000.2", "-1"}};
         if (!"0".equals(a[0][0])) {
             System.out.println("返回错误信息：不是以0开头，该区间为不连续区间");
         }
