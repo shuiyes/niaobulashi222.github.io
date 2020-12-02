@@ -33,7 +33,7 @@ copyright: java
 
 通过以上分析，可以使用二维数组来校验是否为连续的区间
 
-![代码截图][2]
+![代码截图][2] 
 
 
   [1]: https://images.niaobulashi.com/typecho/uploads/2020/09/1047437796.png
