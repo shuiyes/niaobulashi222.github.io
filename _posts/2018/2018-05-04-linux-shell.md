@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Linux中常用Shell命令
-category: java
-tags: [java]
-copyright: java
+category: java, linux
+tags: [java, linux]
+copyright: java, java
 ---
 
 作为项目工程师，接触Linux还是蛮多的，总结下常用的Shell命令

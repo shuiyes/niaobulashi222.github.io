@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Java 极客技术
-titlebar: java
+title: Linux 学习笔记
+titlebar: linux
 subtitle: <span class="mega-octicon octicon-clippy"></span>
-menu: java
+menu: linux
 css: ['blog-page.css']
-permalink: /java
+permalink: /linux
 ---
 
 <div class="row">
@@ -14,10 +14,7 @@ permalink: /java
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='java' 
-                or post.category=='jvm' 
-                or post.keywords contains 'java' 
-                %}
+                {% if post.category=='linux' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
