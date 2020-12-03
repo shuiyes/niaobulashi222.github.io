@@ -1,9 +1,9 @@
 ---
 layout: post
 title: oracle存储过程 关于update的动态SQL-工作心得
-category: java
-tags: [java]
-copyright: java
+category: oracle
+tags: [java, oracle]
+copyright: java, oracle
 ---
 
 花了我一下午时间，外加晚上加班

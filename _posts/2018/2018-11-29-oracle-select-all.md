@@ -1,9 +1,9 @@
 ---
 layout: post
 title: oracle的多表合并查询-工作心得
-category: java
-tags: [java]
-copyright: java
+category: oracle
+tags: [java, oracle]
+copyright: java, oracle
 ---
 
 

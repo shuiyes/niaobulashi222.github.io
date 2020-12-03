@@ -1,9 +1,9 @@
 ---
 layout: post
 title: ORA-02049：oracle超时分布式事务处理等待锁
-category: java
-tags: [java]
-copyright: java
+category: oracle
+tags: [java, oracle]
+copyright: java, oracle
 ---
 
 ## 查询死锁信息

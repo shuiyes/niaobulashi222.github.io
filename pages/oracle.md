@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Java 极客技术
-titlebar: java
+title: Oracle 学习笔记
+titlebar: oracle
 subtitle: <span class="mega-octicon octicon-clippy"></span>
-menu: java
+menu: oracle
 css: ['blog-page.css']
-permalink: /java
+permalink: /oracle
 ---
 
 <div class="row">
@@ -14,13 +14,7 @@ permalink: /java
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='java' 
-                or post.category=='jvm' 
-                or post.category=='linux' 
-                or post.category=='oracle' 
-                or post.category=='mysql' 
-                or post.keywords contains 'java' 
-                %}
+                {% if post.category == 'oracle' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
