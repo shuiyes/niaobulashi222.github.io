@@ -138,9 +138,18 @@ navs:
 labels:
 
   -
-    href: /mybatis.html
-    label: mybatis
+    href: /java.html
+    label: Java
     target: _self
+  -
+    href: /oracle.html
+    label: Oracle
+    target: _self
+  -
+    href: /linux.html
+    label: Linux
+    target: _self
+
 
 #  -
 #    href: /payment.html

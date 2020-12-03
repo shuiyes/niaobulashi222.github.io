@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Linux搭建mysql、apache、php服务总结
-category: life
-tags: [life]
-copyright: life
+category: java
+tags: [java]
+copyright: java
 ---
 
 ##阿里云ESC实例配置
