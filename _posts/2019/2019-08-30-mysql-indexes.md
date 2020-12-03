@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 性能调优-Mysql索引数据结构详解与索引优化
-category: java
-tags: [java]
-copyright: java
+category: mysql
+tags: [java, mysql]
+copyright: java, mysql
 ---
 
 > 最近报名了图灵学院的架构专题的付费课程，没有赶上6月份开课，中途加入的。错过了多线程的直播课程，只能看录播了😭。从性能调优正式开始，视频学习，对自己很有帮助。对自己的学习进行投资是最有用的投资。加油！

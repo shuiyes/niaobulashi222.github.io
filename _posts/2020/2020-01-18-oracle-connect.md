@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 解决Oracle服务端1521端口无法telnet，服务名未开启监听问题
-category: java
-tags: [java]
-copyright: java
+category: oracle
+tags: [java, oracle]
+copyright: java, oracle
 
 ---
 

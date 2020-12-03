@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 存储过程关于LOOP循环问题
+title: 存储过程编译出现锁死情况的解决方法
 category: oracle
 tags: [java, oracle]
 copyright: java, oracle
@@ -52,7 +52,7 @@ copyright: java, oracle
  - 知道死锁对象
  - 不知道死锁对象
 
-#### 知道死锁对象
+### 知道死锁对象
   
 比如我所遇到的问题，P_REVEAL_REPORT_CLEAR_TIP编译响应失败。
 
@@ -80,7 +80,7 @@ copyright: java, oracle
 
     alter system kill session 'sid值,serial#值' immediate;
 
-#### 不知道死锁对象
+### 不知道死锁对象
 
  -  执行下面SQL，先查看哪些表被锁住了
 

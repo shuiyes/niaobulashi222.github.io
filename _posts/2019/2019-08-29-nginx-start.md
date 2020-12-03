@@ -1,9 +1,9 @@
 ---
 layout: post
 title: nginx的安装、配置和卸载
-category: Java
-tags: [java]
-copyright: java
+category: linux
+tags: [java, linux]
+copyright: java, linux
 ---
 
 本篇文章主要学习了Nginx的安装/配置/卸载，做一个大概的了解即可。

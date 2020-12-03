@@ -6,7 +6,7 @@ tags: [java, oracle]
 copyright: java, oracle
 ---
 
-### 存储过程LOOP疑问
+## 存储过程LOOP疑问
 ---
 今天在开发需求时，需要编写一个存储过程，实现数据的初始化功能。
 

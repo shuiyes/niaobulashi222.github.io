@@ -105,15 +105,10 @@ navs:
     href: /life.html
     label: LifeBlog
     target: _self
-    subnav:
-
-      -
-        subHref: /life.html
-        subLabel: LifeBlog
-      -
-        subHref: /java.html
-        subLabel: TechBlog
-
+  -
+    href: /java.html
+    label: TechBlog
+    target: _self
 
   -
     href: /archives.html

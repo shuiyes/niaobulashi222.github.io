@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Mysql锁、事务隔离级别、MVCC底层原理机制
-category: java
-tags: [java]
-copyright: java
+category: mysql
+tags: [java, mysql]
+copyright: java, mysql
 
 ---
 
