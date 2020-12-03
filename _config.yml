@@ -108,13 +108,11 @@ navs:
     subnav:
 
       -
-        href: /life.html
-        label: LifeBlog
-        target: _self
+        subHref: /life.html
+        subLabel: LifeBlog
       -
-        href: /java.html
-        label: TechBlog
-        target: _self
+        subHref: /java.html
+        subLabel: TechBlog
 
 
   -
@@ -129,10 +127,10 @@ navs:
     subnav:
 
       -
-        href: /about.html
+        subHref: /about.html
         subLabel: About
       -
-        href: /link.html
+        subHref: /link.html
         subLabel: Link
 
 
