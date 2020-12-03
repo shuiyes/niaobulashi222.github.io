@@ -1,14 +1,14 @@
 ---
 layout: post
 title: Linux中常用Shell命令
-category: java, linux
+category: linux
 tags: [java, linux]
-copyright: java, java
+copyright: java, linux
 ---
 
 作为项目工程师，接触Linux还是蛮多的，总结下常用的Shell命令
 
-##打包与解压
+## 打包与解压
 项目上需要打包或者解压，常常用于备份或者上版，而打包常见格式为tar包、tar.gz包、war包这三种
 ```
 打.tar包：tar -cvf backup_20180504.tar ./etc ./src
@@ -24,7 +24,7 @@ copyright: java, java
 查看.gz文件内容：tar -tvzf backup_20180504.tar.gz
 ```
 
-##查看系统性能
+## 查看系统性能
 主要查看Linux系统磁盘、内存、服务进行占用空间等信息，详细就不多说
 ```
 查看系统负载：df
@@ -34,7 +34,7 @@ copyright: java, java
 查看主机域名：hostname
 ```
 
-##比较大小
+## 比较大小
 ```
 -ne 不等于
 -gt 大于
@@ -44,7 +44,7 @@ copyright: java, java
 -eq 等于 
 ```
 
-##文件操作
+## 文件操作
 ```
 移动文件：mv test1 相对路径或者绝对路径
 替换文件名称：mv test1 test2
@@ -56,14 +56,14 @@ copyright: java, java
 检查脚本语法：sh -n test.sh
 ```
 
-##查看端口服务
+## 查看端口服务
 ```
 查看启用端口：netstat -lntp
 查看启动服务：systemctl list-unit-files|grep enabled
 搜索端口：netstat -aon|findstr "8080"
 ```
 
-##文件与用户所有者权限变更
+## 文件与用户所有者权限变更
 首先要名称文件的权限：读、写、执行
 
 ![Alt text](/usr/image/article/developmentSkills/Shell/fileSafety.png)

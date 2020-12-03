@@ -16,6 +16,8 @@ permalink: /java
             {% for post in site.posts %}
                 {% if post.category=='java' 
                 or post.category=='jvm' 
+                or post.category=='linux' 
+                or post.category=='mysql' 
                 or post.keywords contains 'java' 
                 %}
                 <li class="posts-list-item">

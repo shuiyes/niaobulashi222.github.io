@@ -1,12 +1,12 @@
 ---
 layout: post
 title: 存储过程关于LOOP循环问题
-category: java
-tags: [java]
-copyright: java
+category: oracle
+tags: [java, oracle]
+copyright: java, oracle
 ---
 
->###**存储过程LOOP疑问**
+### 存储过程LOOP疑问
 ---
 今天在开发需求时，需要编写一个存储过程，实现数据的初始化功能。
 
@@ -43,6 +43,8 @@ end loop
 
 于是我写了个测试例子，存储过程代码如下：
 
+
+## 示例
 ```
 CREATE OR REPLACE PROCEDURE P_TEST(v_res OUT NUMBER,
                                    v_errorCode  OUT NVARCHAR2,

@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Linux 学习笔记
-titlebar: linux
+title: Mysql 学习笔记
+titlebar: mysql
 subtitle: <span class="mega-octicon octicon-clippy"></span>
-menu: linux
+menu: mysql
 css: ['blog-page.css']
-permalink: /linux
+permalink: /mysql
 ---
 
 <div class="row">
@@ -14,7 +14,7 @@ permalink: /linux
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category == 'linux' %}
+                {% if post.category == 'mysql' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>

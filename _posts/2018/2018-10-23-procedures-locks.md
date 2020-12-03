@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 存储过程关于LOOP循环问题
-category: java
-tags: [java]
-copyright: java
+category: oracle
+tags: [java, oracle]
+copyright: java, oracle
 ---
 
 

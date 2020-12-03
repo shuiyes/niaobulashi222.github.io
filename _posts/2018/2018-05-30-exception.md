@@ -11,7 +11,7 @@ copyright: java
 先丢个问题：**请对比 Exception 和 Error，另外，运行时异常与一般异常有什么区别？**
 
 ---
-##经典回答
+## 经典回答
 
 Exception 和 Error 都是继承了 **Throwable 类**，在 Java 中只有 Throwable 类型的实例才可以被抛出（throw）或者捕获（catch），它是异常处理机制的基本组成类型。
 
@@ -26,7 +26,7 @@ Exception 又分为**可检查（checked）异常**和**不检查（unchecked）
 
 不检查异常就是所谓的运行时异常，类似 NullPointerException、ArrayIndexOutOfBoundsException 之类，通常是可以编码避免的逻辑错误，具体根据需要来判断是否需要捕获，并不会在编译期强制要求。
 
-##分析
+## 分析
 
 分析 Exception 和 Error 的区别，是从概念角度考察了 Java 处理机制。总的来说，还处于理解的层面。
 我们在日常编程中，如何处理好异常是比较考验功底的，我觉得需要掌握两个方面。
@@ -50,7 +50,7 @@ catch ( IOException | XEception e) {// Multiple catch
    // Handle it
 } 
 ```
-##知识扩展
+## 知识扩展
 前面谈的大多是概念性的东西，下面我来谈些实践中的选择，我会结合一些代码用例进行分析。
 
 先开看第一个吧，下面的代码反映了异常处理中哪些不当之处?
@@ -113,7 +113,7 @@ public void readPreferences(String filename) {
 
 今天，我从一个常见的异常处理概念问题，简单总结了 Java 异常处理的机制。并结合代码，分析了一些普遍认可的最佳实践，以及业界最新的一些异常使用共识。最后，我分析了异常性能开销，希望对你有所帮助。
 
-##参考文章
+## 参考文章
 https://time.geekbang.org/column/article/6849
 
   [1]: https://docs.oracle.com/javase/9/docs/api/java/lang/Throwable.html#printStackTrace--

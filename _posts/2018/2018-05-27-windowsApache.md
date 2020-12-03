@@ -9,7 +9,7 @@ copyright: java
 用windows系统本地搭建apache，有时会遇到糟心的问题，想卸载了重装，这时已经将服务挂载在windows服务列表中，于是需要将服务卸载掉，这里先安装在卸载吧
 
 
-##安装
+## 安装
 直接放出官网链接：[windows版本apache下载地址][1]
 选择相应的版本下载即可
 解压到目标目录下
@@ -27,7 +27,7 @@ The 'apache' service is successfully installed.
 此时会找到服务名称为：apache的服务
 右键启动即可
 
-##卸载
+## 卸载
 同理安装一样。。。
 命令不一样罢了
 

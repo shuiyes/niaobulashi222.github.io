@@ -146,6 +146,10 @@ labels:
     label: Oracle
     target: _self
   -
+    href: /mysql.html
+    label: Mysql
+    target: _self
+  -
     href: /linux.html
     label: Linux
     target: _self
