@@ -14,7 +14,7 @@ permalink: /linux
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='linux' %}
+                {% if post.category contains 'linux' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
