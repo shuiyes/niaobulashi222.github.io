@@ -130,12 +130,10 @@ navs:
 
       -
         href: /about.html
-        label: About
-        target: _self
+        subLabel: About
       -
         href: /link.html
-        label: Link
-        target: _self
+        subLabel: Link
 
 
 # labels. my blog key words
