@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 长点心吧，已经丢了4把伞了
-category: life
-tags: [life]
-copyright: life
+title: 深入浅出HashMap
+category: java
+tags: [java]
+copyright: java
 
 ---
 
