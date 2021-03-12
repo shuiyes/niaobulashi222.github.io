@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 赛博朋克2077终于不再跳票了
-category: life
-tags: [life]
-copyright: life
+title: 团队如何进行CodeReview
+category: java
+tags: [java]
+copyright: java
 
 ---
 
